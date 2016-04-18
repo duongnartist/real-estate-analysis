@@ -70,7 +70,7 @@ public class DNADocumentCrawler extends JSONObject {
 
     public void printDocument() {
         DNADebug.log(0, URL, getString(URL));
-        DNADebug.log(0, DATE, getString(DATE));
+        DNADebug.log(1, DATE, getString(DATE));
         DNADebug.log(1, TITLE, getString(TITLE));
         DNADebug.log(1, STREET, getString(STREET));
         DNADebug.log(1, WARD, getString(WARD));
