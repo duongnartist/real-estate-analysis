@@ -15,6 +15,9 @@ import java.util.Set;
  */
 public class DNAMongo {
 
+    public static final String URI = "mongodb://duongnartist:123123@ds025180.mlab.com:25180/real_estate";
+    public static final String INFORMATIONS = "informations";
+
     private MongoClient mongoClient;
     private MongoDatabase mongoDatabase;
     private MongoCollection<Document> mongoCollection;

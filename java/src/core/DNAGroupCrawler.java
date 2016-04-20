@@ -34,7 +34,6 @@ public class DNAGroupCrawler {
             String altUrl = String.format(format, i);
             urls.add(altUrl);
         }
-        Collections.reverse(urls);
         for (String url: urls) {
             DNADebug.log(0, "URL", url);
         }

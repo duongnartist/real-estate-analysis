@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acb686da-f857-4606-af0a-189e6dd9921b" name="Default" comment="" />
+    <list default="true" id="acb686da-f857-4606-af0a-189e6dd9921b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/DNAMain.class" afterPath="$PROJECT_DIR$/out/production/java/DNAMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNAGroupCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNAGroupCrawler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNATime.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNATime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DNAMain.java" afterPath="$PROJECT_DIR$/src/DNAMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNADebug.java" afterPath="$PROJECT_DIR$/src/utils/DNADebug.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNAMongo.java" afterPath="$PROJECT_DIR$/src/utils/DNAMongo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNATime.java" afterPath="$PROJECT_DIR$/src/utils/DNATime.java" />
+    </list>
     <ignored path="java.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,14 +41,14 @@
       <file leaf-file-name="DNADocumentCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="77" column="40" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="40" />
+            <state relative-caret-position="270">
+              <caret line="62" column="91" selection-start-line="62" selection-start-column="91" selection-end-line="62" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2531#2532#0" expanded="true" />
-                <element signature="e#2574#2575#0" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
-                <element signature="e#2651#2652#0" expanded="true" />
+                <element signature="e#2504#2505#0" expanded="true" />
+                <element signature="e#2547#2548#0" expanded="true" />
+                <element signature="e#2593#2594#0" expanded="true" />
+                <element signature="e#2624#2625#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,12 +57,12 @@
       <file leaf-file-name="DNAMongo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#964#965#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1133#1134#0" expanded="true" />
+                <element signature="e#1184#1185#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,18 +71,18 @@
       <file leaf-file-name="DNAMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DNAMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="165">
+              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNABatDongSanGroupCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
+      <file leaf-file-name="DNAWebCrawler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="48" />
+            <state relative-caret-position="150">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNAGroupCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/DNAGroupCrawler.java">
+      <file leaf-file-name="DNABatDongSanGroupCrawler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="-4403">
+              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +105,20 @@
       <file leaf-file-name="DNABaseCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/DNABaseCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+            <state relative-caret-position="360">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DNAGroupCrawler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/DNAGroupCrawler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-30">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,11 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNAString.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/DNAString.java">
+      <file leaf-file-name="DNADebug.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/DNADebug.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="105">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -121,21 +149,13 @@
       <file leaf-file-name="DNATime.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/DNATime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="285">
+              <caret line="59" column="91" selection-start-line="59" selection-start-column="91" selection-end-line="59" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DNADebug.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/DNADebug.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -176,14 +196,14 @@
         <option value="$PROJECT_DIR$/src/crawler/DNAGiaVangNetCrawler.java" />
         <option value="$PROJECT_DIR$/src/crawler/DNABaseCrawler.java" />
         <option value="$PROJECT_DIR$/src/crawler/DNAWebCrawler.java" />
-        <option value="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
-        <option value="$PROJECT_DIR$/src/utils/DNADebug.java" />
         <option value="$PROJECT_DIR$/src/utils/DNAFile.java" />
         <option value="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" />
         <option value="$PROJECT_DIR$/src/utils/DNATime.java" />
-        <option value="$PROJECT_DIR$/src/utils/DNAMongo.java" />
+        <option value="$PROJECT_DIR$/src/utils/DNADebug.java" />
         <option value="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
+        <option value="$PROJECT_DIR$/src/utils/DNAMongo.java" />
         <option value="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
+        <option value="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
         <option value="$PROJECT_DIR$/src/DNAMain.java" />
       </list>
     </option>
@@ -384,6 +404,8 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -744,10 +766,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="e#2574#2575#0" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2504#2505#0" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+            <element signature="e#2593#2594#0" expanded="true" />
+            <element signature="e#2624#2625#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -822,6 +844,8 @@
           <caret line="16" column="44" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,34 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/DNABaseCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/DNADebug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/DNAString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -891,34 +887,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/DNAGroupCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="-30">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/DNATime.java">
+    <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="44" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="77" column="40" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="e#2574#2575#0" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,32 +913,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/DNATime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="59" column="91" selection-start-line="59" selection-start-column="91" selection-end-line="59" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/DNADebug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="62" column="91" selection-start-line="62" selection-start-column="91" selection-end-line="62" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2504#2505#0" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+            <element signature="e#2593#2594#0" expanded="true" />
+            <element signature="e#2624#2625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/DNABaseCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="25" selection-end-column="48" />
+        <state relative-caret-position="-4403">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1133#1134#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DNAMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="165">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding />
         </state>
       </provider>

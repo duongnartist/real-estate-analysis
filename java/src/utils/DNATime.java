@@ -57,9 +57,9 @@ public class DNATime {
         return millisecondsInSeconds(secondsInMinutes(minutesInHours(hoursInDays(days))));
     }
 
-    public static Timestamp convertStringToTimestamp(String dateString) {
+    public static Timestamp convertStringToTimestamp(String dateString, String formatString) {
         try {
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            DateFormat dateFormat = new SimpleDateFormat(formatString);
             Date date = dateFormat.parse(dateString);
             java.sql.Timestamp timeStampDate = new Timestamp(date.getTime());
             return timeStampDate;

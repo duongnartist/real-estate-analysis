@@ -5,7 +5,7 @@ package utils;
  */
 public class DNADebug {
 
-    public static final int PADDING_LEFT = -8;
+    public static final int PADDING_LEFT = -16;
 
     public static void log(int tab, String tag, String msg) {
         String tabString = "";

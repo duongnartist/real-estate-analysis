@@ -33,21 +33,19 @@ public class DNADocumentCrawler {
     public static final String PROJECT = "project";
     public static final String DIRECTION = "direction";
     public static final String BEDROOM = "bedroom";
-    public static final String DATE = "date";
+    public static final String VALIDATE = "validate";
+    public static final String INAVLIDATE = "invalidate";
+    public static final String NAME = "name";
+    public static final String MOBILE = "mobile";
+    public static final String EMAIL = "email";
+    public static final String IMAGE = "image";
 
     private DNADelegateCrawler callback;
     private org.bson.Document document;
 
-    public DNADocumentCrawler(String url, String date) {
+    public DNADocumentCrawler(String url) {
         document = new org.bson.Document();
         document.append(URL, url);
-        String timeString = "";
-        Timestamp timestamp = DNATime.convertStringToTimestamp(date);
-        if (timestamp != null) {
-            long time = timestamp.getTime();
-            timeString += DNATime.secondsInMilliseconds(time);
-        }
-        document.append(DATE, timeString);
     }
 
     public static Document getDocumentFromUrl(String url) throws IOException {
@@ -62,13 +60,13 @@ public class DNADocumentCrawler {
 
     public void writeDocument() {
         String url = document.getString(URL);
-        String name = url.substring(url.lastIndexOf("-") + 1, url.length());
+        String name = url.substring(url.lastIndexOf("-") + 1, url.length()).replace("/", "");
         String file = DNAFile.storage + File.separator + name + ".json";
         File docFile = new File(file);
         if (docFile.exists() == true) {
             docFile.delete();
         }
-        DNAFile.writeStringToFile(toString(), file);
+        DNAFile.writeStringToFile(document.toJson(), file);
     }
 
     public void put(String key, String value) {
@@ -81,7 +79,8 @@ public class DNADocumentCrawler {
 
     public void printDocument() {
         DNADebug.log(0, URL, document.getString(URL));
-        DNADebug.log(1, DATE, document.getString(DATE));
+        DNADebug.log(1, VALIDATE, document.getString(VALIDATE));
+        DNADebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
         DNADebug.log(1, TITLE, document.getString(TITLE));
         DNADebug.log(1, STREET, document.getString(STREET));
         DNADebug.log(1, WARD, document.getString(WARD));
@@ -94,6 +93,10 @@ public class DNADocumentCrawler {
         DNADebug.log(1, PROJECT, document.getString(PROJECT));
         DNADebug.log(1, DIRECTION, document.getString(DIRECTION));
         DNADebug.log(1, BEDROOM, document.getString(BEDROOM));
+        DNADebug.log(1, NAME, document.getString(NAME));
+        DNADebug.log(1, MOBILE, document.getString(MOBILE));
+        DNADebug.log(1, EMAIL, document.getString(EMAIL));
+        DNADebug.log(1, IMAGE, document.getString(IMAGE));
     }
 
 }

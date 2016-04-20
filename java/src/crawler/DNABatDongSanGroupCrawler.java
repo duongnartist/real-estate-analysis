@@ -3,13 +3,16 @@ package crawler;
 import core.DNABaseCrawler;
 import core.DNADocumentCrawler;
 import core.DNAGroupCrawler;
+import org.jsoup.Jsoup;
 import utils.DNADebug;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import utils.DNAMongo;
+import utils.DNATime;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.zip.Deflater;
 
@@ -18,13 +21,9 @@ import java.util.zip.Deflater;
  */
 public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
 
-    private DNAMongo dnaMongo;
-
     public DNABatDongSanGroupCrawler(long sleepTime) {
         super(sleepTime);
-        dnaMongo = new DNAMongo("mongodb://duongnartist:123123@ds025180.mlab.com:25180/real_estate");
-        dnaMongo.openCollection("informations");
-        /*
+
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-can-ho-chung-cu",              "http://batdongsan.com.vn/ban-can-ho-chung-cu/p%s/",                2, 1627,    1));
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-rieng",                    "http://batdongsan.com.vn/ban-nha-rieng/p%s/",                      2, 1627,    1));
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-biet-thu-lien-ke",         "http://batdongsan.com.vn/ban-nha-biet-thu-lien-ke/p%s/",           2, 261,     1));
@@ -62,12 +61,11 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-cua-hang-ki-ot",          "http://batdongsan.com.vn/can-thue-cua-hang-ki-ot/p%s/",            2, 9,       1));
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-kho-nha-xuong-dat",       "http://batdongsan.com.vn/can-thue-kho-nha-xuong-dat/p%s/",         2, 3,       1));
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-loai-bat-dong-san-khac",  "http://batdongsan.com.vn/can-thue-loai-bat-dong-san-khac/p%s/",    2, 76,      1));
-        */
 
-        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-ban",  "http://batdongsan.com.vn/nha-dat-ban/p%s/",            2, 5209,    1));
-        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-mua",  "http://batdongsan.com.vn/nha-dat-can-mua/p%s/",    2, 46,      1));
-        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-cho-thue", "http://batdongsan.com.vn/nha-dat-cho-thue/p%s/",   2, 1201,    1));
-        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-thue", "http://batdongsan.com.vn/nha-dat-can-thue/p%s/",   2, 30,      1));
+//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-ban",  "http://batdongsan.com.vn/nha-dat-ban/p%s/",            2, 5209,    1));
+//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-mua",  "http://batdongsan.com.vn/nha-dat-can-mua/p%s/",    2, 46,      1));
+//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-cho-thue", "http://batdongsan.com.vn/nha-dat-cho-thue/p%s/",   2, 1201,    1));
+//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-thue", "http://batdongsan.com.vn/nha-dat-can-thue/p%s/",   2, 30,      1));
     }
 
     @Override
@@ -76,18 +74,18 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
         try {
             Document document = DNADocumentCrawler.getDocumentFromUrl(parentUrl);
             Element bodyElement = document.body();
-            Elements productElements = bodyElement.select("div.vip0.search-productItem");
+            Elements productElements = bodyElement.select("div.p-title");
             if (productElements != null) {
                 for (Element productElement : productElements) {
                     Elements aElements = productElement.getElementsByTag("a");
                     String href = "";
                     if (aElements != null) {
                         href = "http://batdongsan.com.vn" + aElements.attr("href");
-                    }
-                    Elements dateElements = productElement.select("div.floatright.mar-right-10");
-                    if (dateElements != null) {
-                        String date = dateElements.text().trim();
-                        href += "/" + date;
+                        Elements dateElements = productElement.select("div.floatright.mar-right-10");
+                        if (dateElements != null) {
+                            String date = dateElements.text().trim();
+                            href += "/" + date;
+                        }
                     }
                     if (href.length() > 0) {
                         urls.add(href);
@@ -103,25 +101,29 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
 
     @Override
     public DNADocumentCrawler getDocFromUrl(String url) {
-        String docUrl = url.substring(0, url.length() - 11);
-        String docDate = url.substring(url.length() - 10, url.length());
-        DNADocumentCrawler documentCrawler = new DNADocumentCrawler(docUrl, docDate);
+        DNADocumentCrawler documentCrawler = new DNADocumentCrawler(url);
         String title = "";
         String street = "";
         String ward = "";
         String district = "";
         String city = "";
         String price = "";
-        String area= "";
+        String area = "";
         String type = "";
         String category = "";
         String project = "";
         String direction = "";
         String bedroom = "";
+        String name = "";
+        String mobile = "";
+        String email = "";
+        String validate = "";
+        String invalidate = "";
+        String image = "";
         Elements elements = null;
         Element element = null;
         try {
-            Document document = DNADocumentCrawler.getDocumentFromUrl(docUrl);
+            Document document = DNADocumentCrawler.getDocumentFromUrl(url);
             Element bodyElement = document.body();
             //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("div.kqchitiet");
@@ -139,13 +141,17 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 }
                 //----------------------------------------------------------------------------------------------------//
                 Elements elements3 = elements.select("span.gia-title");
-                price = elements3.first().text().trim();
-                if (price.equalsIgnoreCase("Thỏa thuận")) {
-                    price = "";
-                }
-                area = elements3.last().text().trim();
-                if (area.equalsIgnoreCase("Không xác định")) {
-                    area = "";
+                if (elements3 != null) {
+                    if (elements3.size() > 1) {
+                        price = elements3.first().text().trim();
+                        if (price.contains("thỏa") || price.contains("thuận")) {
+                            price = "";
+                        }
+                        area = elements3.last().text().trim();
+                        if (area.contains("không") || area.contains("xác") || area.contains("định")) {
+                            area = "";
+                        }
+                    }
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
@@ -154,7 +160,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 elements = elements.select("li.advance-options.current");
                 if (elements != null) {
                     type = elements.text().trim().substring(8);
-                    category = title.split(" tại ")[0].replace(type, "").trim();
+                    category = title.split("tại")[0].replace(type, "").trim();
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
@@ -214,6 +220,92 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div#LeftMainContent__productDetail_contactName");
+            if (elements != null) {
+                elements = elements.select("div.right");
+                if (elements != null) {
+                    name = elements.text().trim();
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div#LeftMainContent__productDetail_contactPhone");
+            if (elements != null) {
+                elements = elements.select("div.right");
+                if (elements != null) {
+                    mobile = elements.text().trim();
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div#LeftMainContent__productDetail_contactMobile");
+            if (elements != null) {
+                elements = elements.select("div.right");
+                if (elements != null) {
+                    String phone = elements.text().trim();
+                    if (!mobile.equals(phone)) {
+                        if (mobile.length() == 0) {
+                            mobile = phone;
+                        } else {
+                            mobile += " " + phone;
+                        }
+                    }
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div#LeftMainContent__productDetail_contactEmail");
+            if (elements != null) {
+                elements = elements.select("div.right");
+                if (elements != null) {
+                    email = elements.html();
+                    int start = email.indexOf("(\"") + 2;
+                    int end = email.indexOf("\")");
+                    if (start >= 0 && end >= start) {
+                        email = email.substring(start, end);
+                        Document doc = Jsoup.parse(email);
+                        email = doc.text();
+                    }
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div.left-detail");
+            if (elements != null) {
+                Elements leftElements = elements.select("div.left");
+                Elements rightElements = elements.select("div.right");
+                if (leftElements != null && rightElements != null) {
+                    for (int i = 0; i < leftElements.size(); i++) {
+                        String left = leftElements.get(i).text().trim().toLowerCase();
+                        if (left.contains("ngày đăng tin")) {
+                            validate = rightElements.get(i).text().trim();
+                            Timestamp timestamp = DNATime.convertStringToTimestamp(validate, "dd-MM-yyyy");
+                            if (timestamp != null) {
+                                long time = timestamp.getTime();
+                                validate = DNATime.secondsInMilliseconds(time) + "";
+                            }
+                        }
+                        if (left.contains("ngày hết hạn")) {
+                            invalidate = rightElements.get(i).text().trim();
+                            Timestamp timestamp = DNATime.convertStringToTimestamp(invalidate, "dd-MM-yyyy");
+                            if (timestamp != null) {
+                                long time = timestamp.getTime();
+                                invalidate = DNATime.secondsInMilliseconds(time) + "";
+                            }
+                        }
+                    }
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("div.list-img");
+            if (elements != null) {
+                elements = elements.select("img");
+                if (elements != null) {
+                    for (Element srcElement: elements) {
+                        image += srcElement.attr("src").replace("80x60", "745x510") + ";";
+                    }
+                }
+                if (image.length() > 0) {
+                    image.substring(0, image.length() - 2);
+                }
+            }
+            //--------------------------------------------------------------------------------------------------------//
             documentCrawler.put(DNADocumentCrawler.TITLE, title);
             documentCrawler.put(DNADocumentCrawler.STREET, street);
             documentCrawler.put(DNADocumentCrawler.WARD, ward);
@@ -226,6 +318,12 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.PROJECT, project);
             documentCrawler.put(DNADocumentCrawler.DIRECTION, direction);
             documentCrawler.put(DNADocumentCrawler.BEDROOM, bedroom);
+            documentCrawler.put(DNADocumentCrawler.NAME, name);
+            documentCrawler.put(DNADocumentCrawler.MOBILE, mobile);
+            documentCrawler.put(DNADocumentCrawler.EMAIL, email);
+            documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
+            documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
+            documentCrawler.put(DNADocumentCrawler.IMAGE, image);
             documentCrawler.printDocument();
             dnaMongo.insertOne(documentCrawler.getDocument());
             documentCrawler.writeDocument();

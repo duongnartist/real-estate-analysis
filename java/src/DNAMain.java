@@ -15,12 +15,16 @@ import java.io.File;
 public class DNAMain {
 
     public static void main(String[] args) {
-//        DNADate.getInstance();
-//        DNAFile.createStorageFolder();
-//        DNAWebCrawler crawler = new DNAWebCrawler();
-//        crawler.execute();
-        DNAMongo dnaMongo = new DNAMongo("mongodb://duongnartist:123123@ds025180.mlab.com:25180/real_estate");
-        dnaMongo.openCollection("informations");
+        DNADate.getInstance();
+        DNAFile.createStorageFolder();
+        DNAWebCrawler crawler = new DNAWebCrawler();
+        crawler.execute();
+//        deleteAllDocumentAndInsertFromFiles();
+    }
+
+    public static void deleteAllDocumentAndInsertFromFiles() {
+        DNAMongo dnaMongo = new DNAMongo(DNAMongo.URI);
+        dnaMongo.openCollection(DNAMongo.INFORMATIONS).deleteMany(new Document());
         File file = new File(DNAFile.storage);
         if (file != null && file.exists()) {
             File[] listFiles = file.listFiles();
@@ -34,5 +38,4 @@ public class DNAMain {
             }
         }
     }
-
 }

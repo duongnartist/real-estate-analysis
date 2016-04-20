@@ -1,6 +1,7 @@
 package core;
 
 import utils.DNADebug;
+import utils.DNAMongo;
 import utils.DNATime;
 
 import java.util.ArrayList;
@@ -16,8 +17,11 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
     protected ArrayList<DNAGroupCrawler> groups;
     protected long sleepTime;
     protected boolean running;
+    protected DNAMongo dnaMongo;
 
     public DNABaseCrawler(long sleepTime) {
+        dnaMongo = new DNAMongo(DNAMongo.URI);
+        dnaMongo.openCollection(DNAMongo.INFORMATIONS);
         this.sleepTime = sleepTime;
         groups = new ArrayList<DNAGroupCrawler>();
         running = true;
