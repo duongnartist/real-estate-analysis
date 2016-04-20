@@ -1,3 +1,5 @@
+library(shiny)
+library(ggplot2)
 library(mongolite)
 
 options(mongodb = list(
@@ -35,5 +37,12 @@ loadData <- function() {
   data <- db$find()
   data
 }
-categories <- data.frame(loadData())
+
+shinyServer(function(input, output) {
+  
+  output$category <- DT::renderDataTable(
+    DT::datatable(data.frame(loadData()), options = list(pageLength = 15))
+  )
+  
+})
 
