@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acb686da-f857-4606-af0a-189e6dd9921b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/DNAMain.class" afterPath="$PROJECT_DIR$/out/production/java/DNAMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNAGroupCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNAGroupCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNATime.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNATime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DNAMain.java" afterPath="$PROJECT_DIR$/src/DNAMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNADebug.java" afterPath="$PROJECT_DIR$/src/utils/DNADebug.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNAMongo.java" afterPath="$PROJECT_DIR$/src/utils/DNAMongo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNATime.java" afterPath="$PROJECT_DIR$/src/utils/DNATime.java" />
     </list>
     <ignored path="java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,17 +27,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DNADocumentCrawler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DNADocumentCrawler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="62" column="91" selection-start-line="62" selection-start-column="91" selection-end-line="62" selection-end-column="91" />
+            <state relative-caret-position="87">
+              <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2504#2505#0" expanded="true" />
-                <element signature="e#2547#2548#0" expanded="true" />
-                <element signature="e#2593#2594#0" expanded="true" />
-                <element signature="e#2624#2625#0" expanded="true" />
+                <element signature="e#2438#2439#0" expanded="true" />
+                <element signature="e#2481#2482#0" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2558#2559#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,18 +46,18 @@
       <file leaf-file-name="DNAMongo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="375">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1133#1134#0" expanded="true" />
-                <element signature="e#1184#1185#0" expanded="true" />
+                <element signature="e#1105#1106#0" expanded="true" />
+                <element signature="e#1156#1157#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNAMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DNAMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DNAMain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -93,11 +82,21 @@
       <file leaf-file-name="DNABatDongSanGroupCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4403">
-              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+            <state relative-caret-position="263">
+              <caret line="327" column="44" selection-start-line="327" selection-start-column="44" selection-end-line="327" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Document.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/bson-3.0.4.jar!/org/bson/Document.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,18 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DNAGroupCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/DNAGroupCrawler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -200,11 +187,11 @@
         <option value="$PROJECT_DIR$/src/core/DNAGroupCrawler.java" />
         <option value="$PROJECT_DIR$/src/utils/DNATime.java" />
         <option value="$PROJECT_DIR$/src/utils/DNADebug.java" />
-        <option value="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
-        <option value="$PROJECT_DIR$/src/utils/DNAMongo.java" />
-        <option value="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
         <option value="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
         <option value="$PROJECT_DIR$/src/DNAMain.java" />
+        <option value="$PROJECT_DIR$/src/utils/DNAMongo.java" />
+        <option value="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
+        <option value="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
       </list>
     </option>
   </component>
@@ -710,7 +697,21 @@
       <option name="project" value="LOCAL" />
       <updated>1461166577706</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed many bug and add more properties">
+      <created>1461173951382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1461173951382</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remove json library">
+      <created>1461173983435</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461173983435</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -749,7 +750,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="done batdongsan.com.vn" />
     <MESSAGE value="import file to mongodb" />
-    <option name="LAST_COMMIT_MESSAGE" value="import file to mongodb" />
+    <MESSAGE value="fixed many bug and add more properties" />
+    <MESSAGE value="remove json library" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove json library" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -766,10 +769,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2547#2548#0" expanded="true" />
-            <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2558#2559#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -933,20 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="62" column="91" selection-start-line="62" selection-start-column="91" selection-end-line="62" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2547#2548#0" expanded="true" />
-            <element signature="e#2593#2594#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/DNABaseCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -957,33 +946,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4403">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DNAMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/DNAMongo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="327" column="44" selection-start-line="327" selection-start-column="44" selection-end-line="327" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/bson-3.0.4.jar!/org/bson/Document.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2481#2482#0" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2558#2559#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

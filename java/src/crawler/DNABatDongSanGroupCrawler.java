@@ -324,8 +324,8 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
             documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
             documentCrawler.put(DNADocumentCrawler.IMAGE, image);
-            documentCrawler.printDocument();
             dnaMongo.insertOne(documentCrawler.getDocument());
+            documentCrawler.printDocument();
             documentCrawler.writeDocument();
         } catch (IOException e) {
             e.printStackTrace();

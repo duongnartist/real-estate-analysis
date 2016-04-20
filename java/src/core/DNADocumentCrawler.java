@@ -2,7 +2,6 @@ package core;
 
 import jdk.nashorn.internal.runtime.JSONFunctions;
 import org.bson.BSON;
-import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import utils.DNADebug;
@@ -20,6 +19,7 @@ import java.util.Collections;
  */
 public class DNADocumentCrawler {
 
+    public static final String ID = "_id";
     public static final String URL = "url";
     public static final String TITLE = "title";
     public static final String STREET = "street";
@@ -59,8 +59,7 @@ public class DNADocumentCrawler {
     }
 
     public void writeDocument() {
-        String url = document.getString(URL);
-        String name = url.substring(url.lastIndexOf("-") + 1, url.length()).replace("/", "");
+        String name = document.getObjectId(ID).toString();
         String file = DNAFile.storage + File.separator + name + ".json";
         File docFile = new File(file);
         if (docFile.exists() == true) {
@@ -78,7 +77,8 @@ public class DNADocumentCrawler {
     }
 
     public void printDocument() {
-        DNADebug.log(0, URL, document.getString(URL));
+        DNADebug.log(0, ID, document.getObjectId(ID).toString());
+        DNADebug.log(1, URL, document.getString(URL));
         DNADebug.log(1, VALIDATE, document.getString(VALIDATE));
         DNADebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
         DNADebug.log(1, TITLE, document.getString(TITLE));

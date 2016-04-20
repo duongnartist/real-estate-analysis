@@ -6,7 +6,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.BSON;
 import org.bson.Document;
-import org.json.JSONObject;
 
 import java.util.Set;
 
