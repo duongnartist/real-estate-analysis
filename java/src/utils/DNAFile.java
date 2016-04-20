@@ -14,7 +14,7 @@ public class DNAFile {
     public static String home = System.getProperty("user.home");
     public static String dir = System.getProperty("user.dir");
     public static String line = System.getProperty("line.separator");
-    public static String storage = home + File.separator + "real-estate";
+    public static String storage = home + File.separator + "real-estate-analysis";
 
     public static void createStorageFolder() {
         File file = new File(storage);
