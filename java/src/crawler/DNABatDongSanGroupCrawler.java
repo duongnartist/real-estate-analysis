@@ -7,6 +7,7 @@ import utils.DNADebug;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import utils.DNAMongo;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,8 +18,12 @@ import java.util.zip.Deflater;
  */
 public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
 
+    private DNAMongo dnaMongo;
+
     public DNABatDongSanGroupCrawler(long sleepTime) {
         super(sleepTime);
+        dnaMongo = new DNAMongo("mongodb://duongnartist:123123@ds025180.mlab.com:25180/real_estate");
+        dnaMongo.openCollection("informations");
         /*
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-can-ho-chung-cu",              "http://batdongsan.com.vn/ban-can-ho-chung-cu/p%s/",                2, 1627,    1));
         groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-rieng",                    "http://batdongsan.com.vn/ban-nha-rieng/p%s/",                      2, 1627,    1));
@@ -222,6 +227,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.DIRECTION, direction);
             documentCrawler.put(DNADocumentCrawler.BEDROOM, bedroom);
             documentCrawler.printDocument();
+            dnaMongo.insertOne(documentCrawler.getDocument());
             documentCrawler.writeDocument();
         } catch (IOException e) {
             e.printStackTrace();

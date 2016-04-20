@@ -1,6 +1,7 @@
 package core;
 
 import jdk.nashorn.internal.runtime.JSONFunctions;
+import org.bson.BSON;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,7 +18,7 @@ import java.util.Collections;
 /**
  * Created by duong on 3/29/16.
  */
-public class DNADocumentCrawler extends JSONObject {
+public class DNADocumentCrawler {
 
     public static final String URL = "url";
     public static final String TITLE = "title";
@@ -35,16 +36,18 @@ public class DNADocumentCrawler extends JSONObject {
     public static final String DATE = "date";
 
     private DNADelegateCrawler callback;
+    private org.bson.Document document;
 
     public DNADocumentCrawler(String url, String date) {
-        put(URL, url);
+        document = new org.bson.Document();
+        document.append(URL, url);
         String timeString = "";
         Timestamp timestamp = DNATime.convertStringToTimestamp(date);
         if (timestamp != null) {
             long time = timestamp.getTime();
             timeString += DNATime.secondsInMilliseconds(time);
         }
-        put(DATE, timeString);
+        document.append(DATE, timeString);
     }
 
     public static Document getDocumentFromUrl(String url) throws IOException {
@@ -58,7 +61,7 @@ public class DNADocumentCrawler extends JSONObject {
     }
 
     public void writeDocument() {
-        String url = getString(URL);
+        String url = document.getString(URL);
         String name = url.substring(url.lastIndexOf("-") + 1, url.length());
         String file = DNAFile.storage + File.separator + name + ".json";
         File docFile = new File(file);
@@ -68,21 +71,29 @@ public class DNADocumentCrawler extends JSONObject {
         DNAFile.writeStringToFile(toString(), file);
     }
 
+    public void put(String key, String value) {
+        document.append(key, value);
+    }
+
+    public org.bson.Document getDocument() {
+        return document;
+    }
+
     public void printDocument() {
-        DNADebug.log(0, URL, getString(URL));
-        DNADebug.log(1, DATE, getString(DATE));
-        DNADebug.log(1, TITLE, getString(TITLE));
-        DNADebug.log(1, STREET, getString(STREET));
-        DNADebug.log(1, WARD, getString(WARD));
-        DNADebug.log(1, DISTRICT, getString(DISTRICT));
-        DNADebug.log(1, CITY, getString(CITY));
-        DNADebug.log(1, PRICE, getString(PRICE));
-        DNADebug.log(1, AREA, getString(AREA));
-        DNADebug.log(1, TYPE, getString(TYPE));
-        DNADebug.log(1, CATEGORY, getString(CATEGORY));
-        DNADebug.log(1, PROJECT, getString(PROJECT));
-        DNADebug.log(1, DIRECTION, getString(DIRECTION));
-        DNADebug.log(1, BEDROOM, getString(BEDROOM));
+        DNADebug.log(0, URL, document.getString(URL));
+        DNADebug.log(1, DATE, document.getString(DATE));
+        DNADebug.log(1, TITLE, document.getString(TITLE));
+        DNADebug.log(1, STREET, document.getString(STREET));
+        DNADebug.log(1, WARD, document.getString(WARD));
+        DNADebug.log(1, DISTRICT, document.getString(DISTRICT));
+        DNADebug.log(1, CITY, document.getString(CITY));
+        DNADebug.log(1, PRICE, document.getString(PRICE));
+        DNADebug.log(1, AREA, document.getString(AREA));
+        DNADebug.log(1, TYPE, document.getString(TYPE));
+        DNADebug.log(1, CATEGORY, document.getString(CATEGORY));
+        DNADebug.log(1, PROJECT, document.getString(PROJECT));
+        DNADebug.log(1, DIRECTION, document.getString(DIRECTION));
+        DNADebug.log(1, BEDROOM, document.getString(BEDROOM));
     }
 
 }
