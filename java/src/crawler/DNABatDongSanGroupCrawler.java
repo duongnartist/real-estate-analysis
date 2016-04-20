@@ -200,7 +200,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             if (elements != null) {
                 elements = elements.select("li.advance-options.current");
                 if (elements != null) {
-                    bedroom = elements.text().trim();
+                    bedroom = elements.text().trim().replace("+", "");
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
