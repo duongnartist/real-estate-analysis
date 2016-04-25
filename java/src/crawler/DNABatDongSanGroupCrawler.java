@@ -9,6 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import utils.DNAMongo;
+import utils.DNAString;
 import utils.DNATime;
 
 import java.io.IOException;
@@ -145,12 +146,27 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                     if (elements3.size() > 1) {
                         price = elements3.first().text().trim();
                         if (price.contains("thỏa") || price.contains("thuận")) {
-                            price = "";
+                            price = "0";
                         }
+                        if (price.contains("-")) {
+                            String[] prices = price.split("-");
+                            if (prices.length == 2) {
+                                price = prices[0].trim();
+                            }
+                        }
+                        price = price.replaceAll(" ", "");
+                        //----------------------------------------------------------------------------------------------------//
                         area = elements3.last().text().trim();
                         if (area.contains("không") || area.contains("xác") || area.contains("định")) {
-                            area = "";
+                            area = "0";
                         }
+                        if (area.contains("-")) {
+                            String[] areas = area.split("-");
+                            if (areas.length == 2) {
+                                area = areas[0].trim();
+                            }
+                        }
+                        area = area.replaceAll(" ", "");
                     }
                 }
             }
@@ -293,12 +309,16 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
+            org.bson.Document imageDocument = new org.bson.Document();
             elements = bodyElement.select("div.list-img");
             if (elements != null) {
                 elements = elements.select("img");
                 if (elements != null) {
+                    int count = 0;
                     for (Element srcElement: elements) {
-                        image += srcElement.attr("src").replace("80x60", "745x510") + ";";
+                        String imageUrl = srcElement.attr("src").replace("80x60", "745x510");
+                        imageDocument.put("image_" + count, imageUrl);
+                        count++;
                     }
                 }
                 if (image.length() > 0) {
@@ -323,10 +343,12 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.EMAIL, email);
             documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
             documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
-            documentCrawler.put(DNADocumentCrawler.IMAGE, image);
-            dnaMongo.insertOne(documentCrawler.getDocument());
-            documentCrawler.printDocument();
-            documentCrawler.writeDocument();
+            documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
+            if (price != "0" && area != "0") {
+                documentCrawler.insertDocument(dnaMongo.mongoCollection);
+//                documentCrawler.printDocument();
+//                documentCrawler.writeDocument();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

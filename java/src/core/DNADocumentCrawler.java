@@ -1,5 +1,7 @@
 package core;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import jdk.nashorn.internal.runtime.JSONFunctions;
 import org.bson.BSON;
 import org.jsoup.Jsoup;
@@ -68,7 +70,25 @@ public class DNADocumentCrawler {
         DNAFile.writeStringToFile(document.toJson(), file);
     }
 
+    public void insertDocument(MongoCollection<org.bson.Document> mongoCollection) {
+        org.bson.Document findDocument = new org.bson.Document();
+        findDocument.append(URL, document.getString(URL));
+        FindIterable<org.bson.Document> documentFindIterable = mongoCollection.find(findDocument);
+        org.bson.Document resultDocument = documentFindIterable.first();
+        if (resultDocument != null) {
+            mongoCollection.updateOne(resultDocument, new org.bson.Document("$set", document));
+            DNADebug.log(0, "UPDATED", document.getString(URL));
+        } else {
+            mongoCollection.insertOne(document);
+            DNADebug.log(0, "INSERTED", document.getString(URL));
+        }
+    }
+
     public void put(String key, String value) {
+        document.append(key, value);
+    }
+
+    public void put(String key, org.bson.Document value) {
         document.append(key, value);
     }
 
@@ -96,7 +116,7 @@ public class DNADocumentCrawler {
         DNADebug.log(1, NAME, document.getString(NAME));
         DNADebug.log(1, MOBILE, document.getString(MOBILE));
         DNADebug.log(1, EMAIL, document.getString(EMAIL));
-        DNADebug.log(1, IMAGE, document.getString(IMAGE));
+        DNADebug.log(1, IMAGE, document.get(IMAGE).toString());
     }
 
 }

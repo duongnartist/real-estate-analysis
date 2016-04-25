@@ -19,7 +19,7 @@ public class DNAMongo {
 
     private MongoClient mongoClient;
     private MongoDatabase mongoDatabase;
-    private MongoCollection<Document> mongoCollection;
+    public MongoCollection<Document> mongoCollection;
 
     public DNAMongo(String connectionString) {
         MongoClientURI mongoClientURI = new MongoClientURI(connectionString);
