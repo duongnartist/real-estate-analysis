@@ -39,6 +39,7 @@ public class DNADocumentCrawler {
     public static final String INAVLIDATE = "invalidate";
     public static final String NAME = "name";
     public static final String MOBILE = "mobile";
+    public static final String PHONE = "phone";
     public static final String EMAIL = "email";
     public static final String IMAGE = "image";
 
@@ -115,6 +116,7 @@ public class DNADocumentCrawler {
         DNADebug.log(1, BEDROOM, document.getString(BEDROOM));
         DNADebug.log(1, NAME, document.getString(NAME));
         DNADebug.log(1, MOBILE, document.getString(MOBILE));
+        DNADebug.log(1, MOBILE, document.getString(PHONE));
         DNADebug.log(1, EMAIL, document.getString(EMAIL));
         DNADebug.log(1, IMAGE, document.get(IMAGE).toString());
     }

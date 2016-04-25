@@ -117,6 +117,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
         String bedroom = "";
         String name = "";
         String mobile = "";
+        String phone = "";
         String email = "";
         String validate = "";
         String invalidate = "";
@@ -248,7 +249,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             if (elements != null) {
                 elements = elements.select("div.right");
                 if (elements != null) {
-                    mobile = elements.text().trim();
+                    phone = elements.text().trim();
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
@@ -256,14 +257,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             if (elements != null) {
                 elements = elements.select("div.right");
                 if (elements != null) {
-                    String phone = elements.text().trim();
-                    if (!mobile.equals(phone)) {
-                        if (mobile.length() == 0) {
-                            mobile = phone;
-                        } else {
-                            mobile += " " + phone;
-                        }
-                    }
+                    mobile = elements.text().trim();
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
@@ -340,6 +334,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.BEDROOM, bedroom);
             documentCrawler.put(DNADocumentCrawler.NAME, name);
             documentCrawler.put(DNADocumentCrawler.MOBILE, mobile);
+            documentCrawler.put(DNADocumentCrawler.PHONE, phone);
             documentCrawler.put(DNADocumentCrawler.EMAIL, email);
             documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
             documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
