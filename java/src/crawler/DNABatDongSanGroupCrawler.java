@@ -258,6 +258,9 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 elements = elements.select("div.right");
                 if (elements != null) {
                     mobile = elements.text().trim();
+                    if (mobile == phone) {
+                        mobile = "";
+                    }
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
