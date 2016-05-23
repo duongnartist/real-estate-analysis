@@ -29,14 +29,22 @@ public class DNADocumentCrawler {
     public static final String DISTRICT = "district";
     public static final String CITY = "city";
     public static final String PRICE = "price";
+    public static final String PRICE_UNIT = "price_unit";
     public static final String AREA = "area";
+    public static final String AREA_UNIT = "area_unit";
     public static final String TYPE = "type";
     public static final String CATEGORY = "category";
     public static final String PROJECT = "project";
     public static final String DIRECTION = "direction";
     public static final String BEDROOM = "bedroom";
+    public static final String BATHROOM = "bathroom";
+    public static final String FLOOR = "floor";
+    public static final String UTILITY = "utility";
+    public static final String ENVIRONMENT = "environment";
     public static final String VALIDATE = "validate";
     public static final String INAVLIDATE = "invalidate";
+    public static final String DATE_UPDATED = "date_updated";
+    public static final String DATE_CREATED = "date_created";
     public static final String NAME = "name";
     public static final String MOBILE = "mobile";
     public static final String PHONE = "phone";
@@ -98,22 +106,30 @@ public class DNADocumentCrawler {
     }
 
     public void printDocument() {
-        DNADebug.log(0, ID, document.getObjectId(ID).toString());
+//        DNADebug.log(0, ID, document.getObjectId(ID).toString());
         DNADebug.log(1, URL, document.getString(URL));
         DNADebug.log(1, VALIDATE, document.getString(VALIDATE));
         DNADebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
+        DNADebug.log(1, DATE_CREATED, document.getString(DATE_CREATED));
+        DNADebug.log(1, DATE_UPDATED, document.getString(DATE_UPDATED));
         DNADebug.log(1, TITLE, document.getString(TITLE));
         DNADebug.log(1, STREET, document.getString(STREET));
         DNADebug.log(1, WARD, document.getString(WARD));
         DNADebug.log(1, DISTRICT, document.getString(DISTRICT));
         DNADebug.log(1, CITY, document.getString(CITY));
         DNADebug.log(1, PRICE, document.getString(PRICE));
+        DNADebug.log(1, PRICE_UNIT, document.getString(PRICE_UNIT));
         DNADebug.log(1, AREA, document.getString(AREA));
+        DNADebug.log(1, AREA_UNIT, document.getString(AREA_UNIT));
         DNADebug.log(1, TYPE, document.getString(TYPE));
         DNADebug.log(1, CATEGORY, document.getString(CATEGORY));
         DNADebug.log(1, PROJECT, document.getString(PROJECT));
         DNADebug.log(1, DIRECTION, document.getString(DIRECTION));
         DNADebug.log(1, BEDROOM, document.getString(BEDROOM));
+        DNADebug.log(1, BATHROOM, document.getString(BATHROOM));
+        DNADebug.log(1, ENVIRONMENT, document.get(ENVIRONMENT).toString());
+        DNADebug.log(1, UTILITY, document.get(UTILITY).toString());
+        DNADebug.log(1, FLOOR, document.getString(FLOOR));
         DNADebug.log(1, NAME, document.getString(NAME));
         DNADebug.log(1, MOBILE, document.getString(MOBILE));
         DNADebug.log(1, PHONE, document.getString(PHONE));

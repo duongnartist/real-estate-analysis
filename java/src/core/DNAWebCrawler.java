@@ -1,6 +1,7 @@
 package core;
 
 import crawler.DNABatDongSanGroupCrawler;
+import crawler.DNAMuaBanNhaDatGroupCrawler;
 import utils.DNATime;
 
 import java.util.ArrayList;
@@ -14,7 +15,8 @@ public class DNAWebCrawler implements DNADelegateCrawler {
 
     public DNAWebCrawler() {
         crawlers = new ArrayList<DNABaseCrawler>();
-        crawlers.add(new DNABatDongSanGroupCrawler(DNATime.millisecondsInHours(24)));
+//        crawlers.add(new DNABatDongSanGroupCrawler(DNATime.millisecondsInHours(24)));
+        crawlers.add(new DNAMuaBanNhaDatGroupCrawler(DNATime.millisecondsInHours(24)));
     }
 
     @Override

@@ -19,12 +19,18 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
     protected boolean running;
     protected DNAMongo dnaMongo;
 
-    public DNABaseCrawler(long sleepTime) {
+    public DNABaseCrawler(long sleepTime, String collection) {
         dnaMongo = new DNAMongo(DNAMongo.URI);
-        dnaMongo.openCollection(DNAMongo.INFORMATIONS);
+        dnaMongo.openCollection(collection);
         this.sleepTime = sleepTime;
         groups = new ArrayList<DNAGroupCrawler>();
         running = true;
+        try {
+            DNADebug.log(0, "SLEEP", "waiting for connection 20s");
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<DNAGroupCrawler> getGroups() {
