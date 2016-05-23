@@ -70,8 +70,8 @@ public class DNADocumentCrawler {
     }
 
     public void writeDocument() {
-        String name = document.getObjectId(ID).toString();
-        String file = DNAFile.storage + File.separator + name + ".json";
+//        String name = document.getObjectId(ID).toString();
+        String file = DNAFile.storage + File.separator + System.nanoTime() + ".json";
         File docFile = new File(file);
         if (docFile.exists() == true) {
             docFile.delete();

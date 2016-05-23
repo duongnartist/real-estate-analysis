@@ -282,6 +282,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.DATE_UPDATED, dateUpdated);
             documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
             documentCrawler.printDocument();
+            documentCrawler.writeDocument();
             documentCrawler.insertDocument(dnaMongo.mongoCollection);
             if (price != "0" && area != "0") {
 //                documentCrawler.insertDocument(dnaMongo.mongoCollection);

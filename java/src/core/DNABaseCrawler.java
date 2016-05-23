@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
 
-    public static long SLEEP_PER_PARENT_URL = DNATime.millisecondsInSeconds(3);
-    public static long SLEEP_PER_CHILD_URL = DNATime.millisecondsInSeconds(3);
+    public static long SLEEP_PER_PARENT_URL = DNATime.millisecondsInSeconds(0);
+    public static long SLEEP_PER_CHILD_URL = DNATime.millisecondsInSeconds(0);
 
     protected ArrayList<DNAGroupCrawler> groups;
     protected long sleepTime;
@@ -20,17 +20,17 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
     protected DNAMongo dnaMongo;
 
     public DNABaseCrawler(long sleepTime, String collection) {
-        dnaMongo = new DNAMongo(DNAMongo.URI);
-        dnaMongo.openCollection(collection);
+//        dnaMongo = new DNAMongo(DNAMongo.URI);
+//        dnaMongo.openCollection(collection);
+//        try {
+//            DNADebug.log(0, "SLEEP", "waiting for connection 20s");
+//            Thread.sleep(20000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         this.sleepTime = sleepTime;
         groups = new ArrayList<DNAGroupCrawler>();
         running = true;
-        try {
-            DNADebug.log(0, "SLEEP", "waiting for connection 20s");
-            Thread.sleep(20000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public ArrayList<DNAGroupCrawler> getGroups() {
