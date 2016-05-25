@@ -226,7 +226,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
                 if (elements != null) {
                     String text = elements.text().replace(".", "").replace(" ", "").replace("-", "");
                     int index = text.indexOf(phone);
-                    if (index >= 0) {
+                    if (index >= 0 && text.length() >= index + phone.length() + 3) {
                         phone = text.substring(index, index + phone.length() + 3);
                     } else {
                         phone += "xxx";
