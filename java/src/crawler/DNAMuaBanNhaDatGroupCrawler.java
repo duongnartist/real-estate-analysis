@@ -24,18 +24,18 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
     public DNAMuaBanNhaDatGroupCrawler(long sleepTime) {
         super(sleepTime, "mua_ban_nha_dat");
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-ban-3513?p=0", "http://www.muabannhadat.vn/nha-ban-3513?p=%s", 1, 3972, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-ban-3514?p=0", "http://www.muabannhadat.vn/can-ho-ban-3514?p=%s", 1, 1464, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-ban-3515?p=0", "http://www.muabannhadat.vn/dat-ban-3515?p=%s", 1, 1874, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-ban-3513?p=0", "http://www.muabannhadat.vn/nha-ban-3513?p=%s", 1, 4307, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-ban-3514?p=0", "http://www.muabannhadat.vn/can-ho-ban-3514?p=%s", 1, 1595, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-ban-3515?p=0", "http://www.muabannhadat.vn/dat-ban-3515?p=%s", 1, 2076, 1));
         groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-ban-3516?p=0", "http://www.muabannhadat.vn/mat-bang-ban-3516?p=%s", 1, 11, 1));
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-ban-3517?p=0", "http://www.muabannhadat.vn/kho-xuong-ban-3517?p=%s", 1, 12, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-cho-thue-3518?p=0", "http://www.muabannhadat.vn/nha-cho-thue-3518?p=%s", 1, 305, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=0", "http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=%s", 1, 228, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-cho-thue-3520?p=0", "http://www.muabannhadat.vn/dat-cho-thue-3520?p=%s", 1, 3, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-ban-3517?p=0", "http://www.muabannhadat.vn/kho-xuong-ban-3517?p=%s", 1, 13, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-cho-thue-3518?p=0", "http://www.muabannhadat.vn/nha-cho-thue-3518?p=%s", 1, 328, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=0", "http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=%s", 1, 263, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-cho-thue-3520?p=0", "http://www.muabannhadat.vn/dat-cho-thue-3520?p=%s", 1, 4, 1));
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=0", "http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=%s", 1, 69, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=0", "http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=%s", 1, 90, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=0", "http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=%s", 1, 74, 1));
+        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=0", "http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=%s", 1, 95, 1));
     }
 
     @Override
@@ -51,12 +51,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
                     Elements aElements = productElement.getElementsByTag("a");
                     String href = "";
                     if (aElements != null) {
-                        href = "http://www.muabannhadat.vn/" + aElements.attr("href");
-//                        Elements dateElements = productElement.select("div.floatright.mar-right-10");
-//                        if (dateElements != null) {
-//                            String date = dateElements.text().trim();
-//                            href += "/" + date;
-//                        }
+                        href = "http://www.muabannhadat.vn" + aElements.attr("href");
                     }
                     if (href.length() > 0) {
                         urls.add(href);

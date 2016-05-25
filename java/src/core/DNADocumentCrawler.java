@@ -53,10 +53,12 @@ public class DNADocumentCrawler {
 
     private DNADelegateCrawler callback;
     private org.bson.Document document;
+    private String url;
 
     public DNADocumentCrawler(String url) {
         document = new org.bson.Document();
         document.append(URL, url);
+        this.url = url;
     }
 
     public static Document getDocumentFromUrl(String url) throws IOException {
@@ -71,7 +73,8 @@ public class DNADocumentCrawler {
 
     public void writeDocument() {
 //        String name = document.getObjectId(ID).toString();
-        String file = DNAFile.storage + File.separator + System.nanoTime() + ".json";
+        String name = url.substring(url.length() - 7, url.length());
+        String file = DNAFile.storage + File.separator + name + ".json";
         File docFile = new File(file);
         if (docFile.exists() == true) {
             docFile.delete();
