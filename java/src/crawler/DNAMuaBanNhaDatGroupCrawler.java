@@ -1,6 +1,5 @@
 package crawler;
 
-import com.sun.javadoc.Doc;
 import core.DNABaseCrawler;
 import core.DNADocumentCrawler;
 import core.DNAGroupCrawler;
@@ -103,7 +102,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("h1.navi-title");
             if (elements != null) {
-                title = elements.first().text().trim();
+                title = elements.text().trim();
             }
             //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("span#MainContent_ctlDetailBox_lblPrice");
@@ -278,7 +277,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
             documentCrawler.printDocument();
             documentCrawler.writeDocument();
-            documentCrawler.insertDocument(dnaMongo.mongoCollection);
+//            documentCrawler.insertDocument(dnaMongo.mongoCollection);
             if (price != "0" && area != "0") {
 //                documentCrawler.insertDocument(dnaMongo.mongoCollection);
 //                documentCrawler.printDocument();

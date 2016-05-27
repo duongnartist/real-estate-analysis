@@ -49,23 +49,28 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
     public void run() {
         while (running) {
             for (DNAGroupCrawler group : groups) {
-                for (String parentUrl : group.getParentUrls()) {
-                    for (String childUrl : getChildUrls(parentUrl)) {
-                        getDocFromUrl(childUrl);
-                        try {
-                            DNADebug.log(2, "SLEEP", "Sleep " + SLEEP_PER_CHILD_URL + " ms per child url.");
-                            Thread.sleep(SLEEP_PER_CHILD_URL);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (String parentUrl : group.getParentUrls()) {
+                            for (String childUrl : getChildUrls(parentUrl)) {
+                                getDocFromUrl(childUrl);
+                                try {
+                                    DNADebug.log(2, "SLEEP", "Sleep " + SLEEP_PER_CHILD_URL + " ms per child url.");
+                                    Thread.sleep(SLEEP_PER_CHILD_URL);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            try {
+                                DNADebug.log(1, "SLEEP", "Sleep " + SLEEP_PER_PARENT_URL + " ms per parent url.");
+                                Thread.sleep(SLEEP_PER_PARENT_URL);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
-                    try {
-                        DNADebug.log(1, "SLEEP", "Sleep " + SLEEP_PER_PARENT_URL + " ms per parent url.");
-                        Thread.sleep(SLEEP_PER_PARENT_URL);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+                }).start();
             }
             try {
                 DNADebug.log(0, "SLEEP", sleepTime + " ms");
