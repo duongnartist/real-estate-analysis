@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * Created by duong on 3/29/16.
  */
-public class DNAString {
+public class NDString {
 
     public static String normalizeTitle(String title) {
         return title.replaceAll("[\\\\/:\"*?<>|]+", " ");

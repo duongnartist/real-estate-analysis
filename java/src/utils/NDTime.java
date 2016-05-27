@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by duong on 3/30/16.
  */
-public class DNATime {
+public class NDTime {
 
     public static long millisecondsInSeconds(long seconds) {
         return seconds * 1000;

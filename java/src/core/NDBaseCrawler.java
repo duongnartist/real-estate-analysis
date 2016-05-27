@@ -1,58 +1,55 @@
 package core;
 
-import utils.DNADebug;
-import utils.DNAFile;
-import utils.DNAMongo;
-import utils.DNATime;
+import utils.NDDebug;
+import utils.NDFile;
+import utils.NDMongo;
+import utils.NDTime;
 
-import java.io.File;
 import java.util.ArrayList;
 
 /**
  * Created by duong on 3/29/16.
  */
-public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
+public abstract class NDBaseCrawler implements Runnable, NDDelegateCrawler {
 
-    public static long SLEEP_PER_PARENT_URL = DNATime.millisecondsInSeconds(0);
-    public static long SLEEP_PER_CHILD_URL = DNATime.millisecondsInSeconds(0);
+    public static long SLEEP_PER_PARENT_URL = NDTime.millisecondsInSeconds(0);
+    public static long SLEEP_PER_CHILD_URL = NDTime.millisecondsInSeconds(0);
 
-    protected ArrayList<DNAGroupCrawler> groups;
+    protected ArrayList<NDGroupCrawler> groups;
     protected long sleepTime;
     protected boolean running;
-    protected DNAMongo dnaMongo;
+    protected NDMongo NDMongo;
     protected String root;
 
-    public DNABaseCrawler(long sleepTime, String collection) {
-        root = DNAFile.createCollectionFolder(DNAFile.storage, collection);
-//        dnaMongo = new DNAMongo(DNAMongo.URI);
-//        dnaMongo.openCollection(collection);
-//        try {
-//            DNADebug.log(0, "SLEEP", "waiting for connection 20s");
-//            Thread.sleep(20000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+    public NDBaseCrawler(long sleepTime, String collection) {
+        root = NDFile.createCollectionFolder(NDFile.storage, collection);
+        connectMongoDd(collection);
         this.sleepTime = sleepTime;
-        groups = new ArrayList<DNAGroupCrawler>();
+        groups = new ArrayList<NDGroupCrawler>();
         running = true;
     }
 
-    public ArrayList<DNAGroupCrawler> getGroups() {
+    private void connectMongoDd(String collection) {
+        NDMongo = new NDMongo(utils.NDMongo.URI);
+        NDMongo.openCollection(collection);
+    }
+
+    public ArrayList<NDGroupCrawler> getGroups() {
         return groups;
     }
 
-    public void setGroups(ArrayList<DNAGroupCrawler> groups) {
+    public void setGroups(ArrayList<NDGroupCrawler> groups) {
         this.groups = groups;
     }
 
     public abstract ArrayList<String> getChildUrls(String parentUrl);
 
-    public abstract DNADocumentCrawler getDocFromUrl(String url);
+    public abstract NDDocumentCrawler getDocFromUrl(String url);
 
     @Override
     public void run() {
         while (running) {
-            for (DNAGroupCrawler group : groups) {
+            for (NDGroupCrawler group : groups) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -60,14 +57,14 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
                             for (String childUrl : getChildUrls(parentUrl)) {
                                 getDocFromUrl(childUrl);
                                 try {
-                                    DNADebug.log(2, "SLEEP", "Sleep " + SLEEP_PER_CHILD_URL + " ms per child url.");
+                                    NDDebug.log(2, "SLEEP", "Sleep " + SLEEP_PER_CHILD_URL + " ms per child url.");
                                     Thread.sleep(SLEEP_PER_CHILD_URL);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
                             }
                             try {
-                                DNADebug.log(1, "SLEEP", "Sleep " + SLEEP_PER_PARENT_URL + " ms per parent url.");
+                                NDDebug.log(1, "SLEEP", "Sleep " + SLEEP_PER_PARENT_URL + " ms per parent url.");
                                 Thread.sleep(SLEEP_PER_PARENT_URL);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
@@ -77,7 +74,7 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
                 }).start();
             }
             try {
-                DNADebug.log(0, "SLEEP", sleepTime + " ms");
+                NDDebug.log(0, "SLEEP", sleepTime + " ms");
                 Thread.sleep(sleepTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();

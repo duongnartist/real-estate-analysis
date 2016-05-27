@@ -5,12 +5,12 @@ import java.util.HashMap;
 /**
  * Created by duong on 3/30/16.
  */
-public class DNADate {
+public class NDDate {
 
     public static HashMap<String, String> months = new HashMap<>();
-    private static DNADate instance = null;
+    private static NDDate instance = null;
 
-    private DNADate() {
+    private NDDate() {
         months.put("tháng mười hai", "12");
         months.put("tháng mười một", "11");
         months.put("tháng mười", "10");
@@ -48,9 +48,9 @@ public class DNADate {
         months.put("tháng 9", "09");
     }
 
-    public static DNADate getInstance() {
+    public static NDDate getInstance() {
         if (instance == null) {
-            instance = new DNADate();
+            instance = new NDDate();
         }
         return instance;
     }

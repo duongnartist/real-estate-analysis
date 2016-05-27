@@ -2,24 +2,18 @@ package core;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import jdk.nashorn.internal.runtime.JSONFunctions;
-import org.bson.BSON;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import utils.DNADebug;
-import utils.DNAFile;
-import utils.DNATime;
+import utils.NDDebug;
+import utils.NDFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by duong on 3/29/16.
  */
-public class DNADocumentCrawler {
+public class NDDocumentCrawler {
 
     public static final String _ID = "_id";
     public static final String URL = "url";
@@ -55,11 +49,11 @@ public class DNADocumentCrawler {
     public static final String ID = "id";
     public static final String DESCRIPTION = "description";
 
-    private DNADelegateCrawler callback;
+    private NDDelegateCrawler callback;
     private org.bson.Document document;
     private String url;
 
-    public DNADocumentCrawler(String url) {
+    public NDDocumentCrawler(String url) {
         document = new org.bson.Document();
         document.append(URL, url);
         this.url = url;
@@ -77,12 +71,12 @@ public class DNADocumentCrawler {
 
     public void writeDocument(String root) {
         String file = root + File.separator + document.getString(ID) + ".json";
-        DNADebug.prln(file);
+        NDDebug.prln(file);
         File docFile = new File(file);
         if (docFile.exists() == true) {
             docFile.delete();
         }
-        DNAFile.writeStringToFile(document.toJson(), file);
+        NDFile.writeStringToFile(document.toJson(), file);
     }
 
     public void insertDocument(MongoCollection<org.bson.Document> mongoCollection) {
@@ -92,10 +86,10 @@ public class DNADocumentCrawler {
         org.bson.Document resultDocument = documentFindIterable.first();
         if (resultDocument != null) {
             mongoCollection.updateOne(resultDocument, new org.bson.Document("$set", document));
-            DNADebug.log(0, "UPDATED", document.getString(URL));
+            NDDebug.log(0, "UPDATED", document.getString(URL));
         } else {
             mongoCollection.insertOne(document);
-            DNADebug.log(0, "INSERTED", document.getString(URL));
+            NDDebug.log(0, "INSERTED", document.getString(URL));
         }
     }
 
@@ -112,38 +106,38 @@ public class DNADocumentCrawler {
     }
 
     public void printDocument() {
-        DNADebug.log(1, ID, document.getString(ID));
-        DNADebug.log(1, TITLE, document.getString(TITLE));
-        DNADebug.log(1, LATITUDE, document.getString(LATITUDE));
-        DNADebug.log(1, LONGITUDE, document.getString(LONGITUDE));
-        DNADebug.log(1, DESCRIPTION, document.getString(DESCRIPTION));
-        DNADebug.log(1, URL, document.getString(URL));
-        DNADebug.log(1, VALIDATE, document.getString(VALIDATE));
-        DNADebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
-        DNADebug.log(1, DATE_CREATED, document.getString(DATE_CREATED));
-        DNADebug.log(1, DATE_UPDATED, document.getString(DATE_UPDATED));
-        DNADebug.log(1, STREET, document.getString(STREET));
-        DNADebug.log(1, WARD, document.getString(WARD));
-        DNADebug.log(1, DISTRICT, document.getString(DISTRICT));
-        DNADebug.log(1, CITY, document.getString(CITY));
-        DNADebug.log(1, PRICE, document.getString(PRICE));
-        DNADebug.log(1, PRICE_UNIT, document.getString(PRICE_UNIT));
-        DNADebug.log(1, AREA, document.getString(AREA));
-        DNADebug.log(1, AREA_UNIT, document.getString(AREA_UNIT));
-        DNADebug.log(1, TYPE, document.getString(TYPE));
-        DNADebug.log(1, CATEGORY, document.getString(CATEGORY));
-        DNADebug.log(1, PROJECT, document.getString(PROJECT));
-        DNADebug.log(1, DIRECTION, document.getString(DIRECTION));
-        DNADebug.log(1, BEDROOM, document.getString(BEDROOM));
-        DNADebug.log(1, BATHROOM, document.getString(BATHROOM));
-        DNADebug.log(1, ENVIRONMENT, document.get(ENVIRONMENT).toString());
-        DNADebug.log(1, UTILITY, document.get(UTILITY).toString());
-        DNADebug.log(1, FLOOR, document.getString(FLOOR));
-        DNADebug.log(1, NAME, document.getString(NAME));
-        DNADebug.log(1, MOBILE, document.getString(MOBILE));
-        DNADebug.log(1, PHONE, document.getString(PHONE));
-        DNADebug.log(1, EMAIL, document.getString(EMAIL));
-        DNADebug.log(1, IMAGE, document.get(IMAGE).toString());
+        NDDebug.log(1, ID, document.getString(ID));
+        NDDebug.log(1, TITLE, document.getString(TITLE));
+        NDDebug.log(1, LATITUDE, document.getString(LATITUDE));
+        NDDebug.log(1, LONGITUDE, document.getString(LONGITUDE));
+        NDDebug.log(1, DESCRIPTION, document.getString(DESCRIPTION));
+        NDDebug.log(1, URL, document.getString(URL));
+        NDDebug.log(1, VALIDATE, document.getString(VALIDATE));
+        NDDebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
+        NDDebug.log(1, DATE_CREATED, document.getString(DATE_CREATED));
+        NDDebug.log(1, DATE_UPDATED, document.getString(DATE_UPDATED));
+        NDDebug.log(1, STREET, document.getString(STREET));
+        NDDebug.log(1, WARD, document.getString(WARD));
+        NDDebug.log(1, DISTRICT, document.getString(DISTRICT));
+        NDDebug.log(1, CITY, document.getString(CITY));
+        NDDebug.log(1, PRICE, document.getString(PRICE));
+        NDDebug.log(1, PRICE_UNIT, document.getString(PRICE_UNIT));
+        NDDebug.log(1, AREA, document.getString(AREA));
+        NDDebug.log(1, AREA_UNIT, document.getString(AREA_UNIT));
+        NDDebug.log(1, TYPE, document.getString(TYPE));
+        NDDebug.log(1, CATEGORY, document.getString(CATEGORY));
+        NDDebug.log(1, PROJECT, document.getString(PROJECT));
+        NDDebug.log(1, DIRECTION, document.getString(DIRECTION));
+        NDDebug.log(1, BEDROOM, document.getString(BEDROOM));
+        NDDebug.log(1, BATHROOM, document.getString(BATHROOM));
+        NDDebug.log(1, ENVIRONMENT, document.get(ENVIRONMENT).toString());
+        NDDebug.log(1, UTILITY, document.get(UTILITY).toString());
+        NDDebug.log(1, FLOOR, document.getString(FLOOR));
+        NDDebug.log(1, NAME, document.getString(NAME));
+        NDDebug.log(1, MOBILE, document.getString(MOBILE));
+        NDDebug.log(1, PHONE, document.getString(PHONE));
+        NDDebug.log(1, EMAIL, document.getString(EMAIL));
+        NDDebug.log(1, IMAGE, document.get(IMAGE).toString());
     }
 
 }

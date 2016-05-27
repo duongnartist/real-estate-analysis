@@ -1,28 +1,25 @@
 package crawler;
 
-import core.DNABaseCrawler;
-import core.DNADocumentCrawler;
-import core.DNAGroupCrawler;
+import core.NDBaseCrawler;
+import core.NDDocumentCrawler;
+import core.NDGroupCrawler;
 import org.jsoup.Jsoup;
-import utils.DNADebug;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import utils.DNAMongo;
-import utils.DNAString;
-import utils.DNATime;
+import utils.NDDebug;
+import utils.NDTime;
 
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.zip.Deflater;
 
 /**
  * Created by duong on 3/29/16.
  */
-public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
+public class NDBatDongSanGroupCrawler extends NDBaseCrawler {
 
-    public DNABatDongSanGroupCrawler(long sleepTime) {
+    public NDBatDongSanGroupCrawler(long sleepTime) {
         super(sleepTime, "bat_dong_san");
         fetchGroups();
     }
@@ -30,22 +27,22 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
     private void fetchGroups() {
         try {
             String home = "http://batdongsan.com.vn";
-            Document document = DNADocumentCrawler.getDocumentFromUrl(home);
+            Document document = NDDocumentCrawler.getDocumentFromUrl(home);
             Element bodyElement = document.body();
             Elements categoryElements = bodyElement.select("li.lv0");
             if (categoryElements != null) {
                 for (int i = 0; i < 3; i++) {
                     Element element = categoryElements.get(i);
                     String link = home + element.select("a").attr("href");
-                    Document document1 = DNADocumentCrawler.getDocumentFromUrl(link);
+                    Document document1 = NDDocumentCrawler.getDocumentFromUrl(link);
                     Element bodyElement1 = document1.body();
                     Elements elements = bodyElement1.select("div.background-pager-right-controls");
                     if (elements != null) {
                         String text = elements.select("a").last().attr("href").split("/")[2].replace("p", "");
                         try {
                             int number = Integer.parseInt(text);
-                            DNADebug.prln(link + " has " + number + " news");
-                            groups.add(new DNAGroupCrawler(link, link + "/p%s/", 2, number, 1));
+                            NDDebug.prln(link + " has " + number + " news");
+                            groups.add(new NDGroupCrawler(link, link + "/p%s/", 2, number, 1));
                         } catch (NumberFormatException e) {
                             e.printStackTrace();
                         }
@@ -59,10 +56,10 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
 
     @Override
     public ArrayList<String> getChildUrls(String parentUrl) {
-        DNADebug.log(0, "GET CHILD", parentUrl);
+        NDDebug.log(0, "GET CHILD", parentUrl);
         ArrayList<String> urls = new ArrayList<String>();
         try {
-            Document document = DNADocumentCrawler.getDocumentFromUrl(parentUrl);
+            Document document = NDDocumentCrawler.getDocumentFromUrl(parentUrl);
             Element bodyElement = document.body();
             Elements productElements = bodyElement.select("div.p-title");
             if (productElements != null) {
@@ -79,7 +76,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                     }
                     if (href.length() > 0) {
                         urls.add(href);
-                        DNADebug.log(1, "GET", href);
+                        NDDebug.log(1, "GET", href);
                     }
                 }
             }
@@ -90,8 +87,8 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
     }
 
     @Override
-    public DNADocumentCrawler getDocFromUrl(String url) {
-        DNADocumentCrawler documentCrawler = new DNADocumentCrawler(url);
+    public NDDocumentCrawler getDocFromUrl(String url) {
+        NDDocumentCrawler documentCrawler = new NDDocumentCrawler(url);
         String title = "";
         String id = "";
         String street = "";
@@ -116,7 +113,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
         Elements elements = null;
         Element element = null;
         try {
-            Document document = DNADocumentCrawler.getDocumentFromUrl(url);
+            Document document = NDDocumentCrawler.getDocumentFromUrl(url);
             Element bodyElement = document.body();
             id = url.substring(url.length() - 8, url.length() - 1);
             //--------------------------------------------------------------------------------------------------------//
@@ -284,18 +281,18 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                         String left = leftElements.get(i).text().trim().toLowerCase();
                         if (left.contains("ngày đăng tin")) {
                             validate = rightElements.get(i).text().trim();
-                            Timestamp timestamp = DNATime.convertStringToTimestamp(validate, "dd-MM-yyyy");
+                            Timestamp timestamp = NDTime.convertStringToTimestamp(validate, "dd-MM-yyyy");
                             if (timestamp != null) {
                                 long time = timestamp.getTime();
-                                validate = DNATime.secondsInMilliseconds(time) + "";
+                                validate = NDTime.secondsInMilliseconds(time) + "";
                             }
                         }
                         if (left.contains("ngày hết hạn")) {
                             invalidate = rightElements.get(i).text().trim();
-                            Timestamp timestamp = DNATime.convertStringToTimestamp(invalidate, "dd-MM-yyyy");
+                            Timestamp timestamp = NDTime.convertStringToTimestamp(invalidate, "dd-MM-yyyy");
                             if (timestamp != null) {
                                 long time = timestamp.getTime();
-                                invalidate = DNATime.secondsInMilliseconds(time) + "";
+                                invalidate = NDTime.secondsInMilliseconds(time) + "";
                             }
                         }
                     }
@@ -319,30 +316,30 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
-            documentCrawler.put(DNADocumentCrawler.ID, id);
-            documentCrawler.put(DNADocumentCrawler.TITLE, title);
-            documentCrawler.put(DNADocumentCrawler.STREET, street);
-            documentCrawler.put(DNADocumentCrawler.WARD, ward);
-            documentCrawler.put(DNADocumentCrawler.DISTRICT, district);
-            documentCrawler.put(DNADocumentCrawler.CITY, city);
-            documentCrawler.put(DNADocumentCrawler.PRICE, price);
-            documentCrawler.put(DNADocumentCrawler.AREA, area);
-            documentCrawler.put(DNADocumentCrawler.TYPE, type);
-            documentCrawler.put(DNADocumentCrawler.CATEGORY, category);
-            documentCrawler.put(DNADocumentCrawler.PROJECT, project);
-            documentCrawler.put(DNADocumentCrawler.DIRECTION, direction);
-            documentCrawler.put(DNADocumentCrawler.BEDROOM, bedroom);
-            documentCrawler.put(DNADocumentCrawler.NAME, name);
-            documentCrawler.put(DNADocumentCrawler.MOBILE, mobile);
-            documentCrawler.put(DNADocumentCrawler.PHONE, phone);
-            documentCrawler.put(DNADocumentCrawler.EMAIL, email);
-            documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
-            documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
-            documentCrawler.put(DNADocumentCrawler.DESCRIPTION, description);
-            documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
+            documentCrawler.put(NDDocumentCrawler.ID, id);
+            documentCrawler.put(NDDocumentCrawler.TITLE, title);
+            documentCrawler.put(NDDocumentCrawler.STREET, street);
+            documentCrawler.put(NDDocumentCrawler.WARD, ward);
+            documentCrawler.put(NDDocumentCrawler.DISTRICT, district);
+            documentCrawler.put(NDDocumentCrawler.CITY, city);
+            documentCrawler.put(NDDocumentCrawler.PRICE, price);
+            documentCrawler.put(NDDocumentCrawler.AREA, area);
+            documentCrawler.put(NDDocumentCrawler.TYPE, type);
+            documentCrawler.put(NDDocumentCrawler.CATEGORY, category);
+            documentCrawler.put(NDDocumentCrawler.PROJECT, project);
+            documentCrawler.put(NDDocumentCrawler.DIRECTION, direction);
+            documentCrawler.put(NDDocumentCrawler.BEDROOM, bedroom);
+            documentCrawler.put(NDDocumentCrawler.NAME, name);
+            documentCrawler.put(NDDocumentCrawler.MOBILE, mobile);
+            documentCrawler.put(NDDocumentCrawler.PHONE, phone);
+            documentCrawler.put(NDDocumentCrawler.EMAIL, email);
+            documentCrawler.put(NDDocumentCrawler.VALIDATE, validate);
+            documentCrawler.put(NDDocumentCrawler.INAVLIDATE, invalidate);
+            documentCrawler.put(NDDocumentCrawler.DESCRIPTION, description);
+            documentCrawler.put(NDDocumentCrawler.IMAGE, imageDocument);
             documentCrawler.writeDocument(root);
             if (price != "0" && area != "0") {
-//                documentCrawler.insertDocument(dnaMongo.mongoCollection);
+//                documentCrawler.insertDocument(NDMongo.mongoCollection);
 //                documentCrawler.printDocument();
 //                documentCrawler.writeDocument(root);
             }

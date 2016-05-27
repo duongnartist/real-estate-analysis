@@ -3,7 +3,7 @@ package utils;
 /**
  * Created by duong on 3/27/16.
  */
-public class DNADebug {
+public class NDDebug {
 
     public static final int PADDING_LEFT = -16;
 

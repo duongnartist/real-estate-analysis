@@ -1,13 +1,13 @@
 package core;
 
-import utils.DNADebug;
+import utils.NDDebug;
+
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by duong on 3/29/16.
  */
-public class DNAGroupCrawler {
+public class NDGroupCrawler {
 
     private String url;
     private String format;
@@ -15,11 +15,11 @@ public class DNAGroupCrawler {
     private int end;
     private int step;
 
-    public DNAGroupCrawler() {
+    public NDGroupCrawler() {
 
     }
 
-    public DNAGroupCrawler(String url, String format, int start, int end, int step) {
+    public NDGroupCrawler(String url, String format, int start, int end, int step) {
         this.url = url;
         this.format = format;
         this.start = start;
@@ -35,7 +35,7 @@ public class DNAGroupCrawler {
             urls.add(altUrl);
         }
         for (String url: urls) {
-            DNADebug.log(0, "URL", url);
+            NDDebug.log(0, "URL", url);
         }
         return urls;
     }

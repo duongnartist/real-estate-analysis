@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by duong on 3/29/16.
  */
-public class DNAFile {
+public class NDFile {
 
     public static String home = System.getProperty("user.home");
     public static String dir = System.getProperty("user.dir");
@@ -28,9 +28,9 @@ public class DNAFile {
         File file = new File(path);
         if (file != null && file.exists() == false) {
             if (file.mkdir() == true) {
-                DNADebug.prln("Created folder " + path);
+                NDDebug.prln("Created folder " + path);
             } else {
-                DNADebug.prln("Can't created folder " + path);
+                NDDebug.prln("Can't created folder " + path);
             }
         }
         return path;
