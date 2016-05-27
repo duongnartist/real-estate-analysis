@@ -15,7 +15,7 @@ public class DNAWebCrawler implements DNADelegateCrawler {
 
     public DNAWebCrawler() {
         crawlers = new ArrayList<DNABaseCrawler>();
-//        crawlers.add(new DNABatDongSanGroupCrawler(DNATime.millisecondsInHours(24)));
+        crawlers.add(new DNABatDongSanGroupCrawler(DNATime.millisecondsInHours(24)));
         crawlers.add(new DNAMuaBanNhaDatGroupCrawler(DNATime.millisecondsInHours(24)));
     }
 

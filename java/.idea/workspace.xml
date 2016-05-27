@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf50bd82-4986-44b6-b4b1-8d074b93411b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNABaseCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNABaseCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNADocumentCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/core/DNAWebCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/core/DNAWebCrawler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" afterPath="$PROJECT_DIR$/out/production/java/crawler/DNABatDongSanGroupCrawler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNADebug.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java/utils/DNAFile.class" afterPath="$PROJECT_DIR$/out/production/java/utils/DNAFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/DNAWebCrawler.java" afterPath="$PROJECT_DIR$/src/core/DNAWebCrawler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crawler/DNAMuaBanNhaDatGroupCrawler.java" afterPath="$PROJECT_DIR$/src/crawler/DNAMuaBanNhaDatGroupCrawler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNADebug.java" afterPath="$PROJECT_DIR$/src/utils/DNADebug.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/DNAFile.java" afterPath="$PROJECT_DIR$/src/utils/DNAFile.java" />
     </list>
     <ignored path="java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,21 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNABatDongSanGroupCrawler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DNABatDongSanGroupCrawler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46484375">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNAMuaBanNhaDatGroupCrawler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DNAMuaBanNhaDatGroupCrawler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/crawler/DNAMuaBanNhaDatGroupCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6896553">
-              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.7048458">
+              <caret line="344" column="50" selection-start-line="344" selection-start-column="50" selection-end-line="344" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3917#3925#0" expanded="true" />
@@ -121,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+              <caret line="145" column="63" selection-start-line="145" selection-start-column="63" selection-end-line="145" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -163,10 +159,8 @@
         <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,12 +184,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/core/DNAWebCrawler.java" />
-        <option value="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
         <option value="$PROJECT_DIR$/src/utils/DNADebug.java" />
         <option value="$PROJECT_DIR$/src/core/DNABaseCrawler.java" />
         <option value="$PROJECT_DIR$/src/utils/DNAFile.java" />
         <option value="$PROJECT_DIR$/src/core/DNADocumentCrawler.java" />
+        <option value="$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java" />
+        <option value="$PROJECT_DIR$/src/core/DNAWebCrawler.java" />
         <option value="$PROJECT_DIR$/src/crawler/DNAMuaBanNhaDatGroupCrawler.java" />
       </list>
     </option>
@@ -644,7 +638,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464357041874</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add more thread to crawler and some properties">
+      <created>1464379213512</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464379213512</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -653,7 +653,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -684,7 +684,8 @@
     <MESSAGE value="mua ban nha dat" />
     <MESSAGE value="mua ban nha dat update" />
     <MESSAGE value="mua ban nha dat update write name" />
-    <option name="LAST_COMMIT_MESSAGE" value="mua ban nha dat update write name" />
+    <MESSAGE value="add more thread to crawler and some properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="add more thread to crawler and some properties" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -787,9 +788,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -885,9 +884,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,16 +893,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,27 +980,35 @@
     <entry file="file://$PROJECT_DIR$/src/core/DNADocumentCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+          <caret line="145" column="63" selection-start-line="145" selection-start-column="63" selection-end-line="145" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/DNAWebCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="54" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/crawler/DNAMuaBanNhaDatGroupCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6896553">
-          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7048458">
+          <caret line="344" column="50" selection-start-line="344" selection-start-column="50" selection-end-line="344" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3917#3925#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/DNABatDongSanGroupCrawler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46484375">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

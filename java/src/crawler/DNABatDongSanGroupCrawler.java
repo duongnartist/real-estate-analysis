@@ -24,54 +24,37 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
 
     public DNABatDongSanGroupCrawler(long sleepTime) {
         super(sleepTime, "bat_dong_san");
+        fetchGroups();
+    }
 
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-can-ho-chung-cu",              "http://batdongsan.com.vn/ban-can-ho-chung-cu/p%s/",                2, 1627,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-rieng",                    "http://batdongsan.com.vn/ban-nha-rieng/p%s/",                      2, 1627,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-biet-thu-lien-ke",         "http://batdongsan.com.vn/ban-nha-biet-thu-lien-ke/p%s/",           2, 261,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-nha-mat-pho",                  "http://batdongsan.com.vn/ban-nha-mat-pho/p%s/",                    2, 606,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-dat-nen-du-an",                "http://batdongsan.com.vn/ban-dat-nen-du-an/p%s/",                  2, 439,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-dat",                          "http://batdongsan.com.vn/ban-dat/p%s/",                            2, 928,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-trang-trai-khu-nghi-duong",    "http://batdongsan.com.vn/ban-trang-trai-khu-nghi-duong/p%s/",      2, 12,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-kho-nha-xuong",                "http://batdongsan.com.vn/ban-kho-nha-xuong/p%s/",                  2, 15,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/ban-loai-bat-dong-san-khac",       "http://batdongsan.com.vn/ban-loai-bat-dong-san-khac/p%s/",         2, 20,      1));
-//
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-can-ho-chung-cu",              "http://batdongsan.com.vn/mua-can-ho-chung-cu/p%s/",                2, 5,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-nha-rieng",                    "http://batdongsan.com.vn/mua-nha-rieng/p%s/",                      2, 7,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-nha-biet-thu-lien-ke",         "http://batdongsan.com.vn/mua-nha-biet-thu-lien-ke/p%s/",           2, 0,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-nha-mat-pho",                  "http://batdongsan.com.vn/mua-nha-mat-pho/p%s/",                    2, 2,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-dat-nen-du-an",                "http://batdongsan.com.vn/mua-dat-nen-du-an/p%s/",                  2, 4,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-dat",                          "http://batdongsan.com.vn/mua-dat/p%s/",                            2, 4,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-trang-trai-khu-nghi-duong",    "http://batdongsan.com.vn/mua-trang-trai-khu-nghi-duong/p%s/",      2, 0,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-kho-nha-xuong",                "http://batdongsan.com.vn/mua-kho-nha-xuong/p%s/",                  2, 0,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/mua-loai-bat-dong-san-khac",       "http://batdongsan.com.vn/mua-loai-bat-dong-san-khac/p%s/",         2, 76,      1));
-//
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-can-ho-chung-cu",         "http://batdongsan.com.vn/cho-thue-can-ho-chung-cu/p%s/",           2, 429,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-nha-rieng",               "http://batdongsan.com.vn/cho-thue-nha-rieng/p%s/",                 2, 195,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-nha-mat-pho",             "http://batdongsan.com.vn/cho-thue-nha-mat-pho/p%s/",               2, 135,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-nha-tro-phong-tro",       "http://batdongsan.com.vn/cho-thue-nha-tro-phong-tro/p%s/",         2, 166,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-van-phong",               "http://batdongsan.com.vn/cho-thue-van-phong/p%s/",                 2, 87,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-cua-hang-ki-ot",          "http://batdongsan.com.vn/cho-thue-cua-hang-ki-ot/p%s/",            2, 123,     1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-kho-nha-xuong-dat",       "http://batdongsan.com.vn/cho-thue-kho-nha-xuong-dat/p%s/",         2, 66,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/cho-thue-loai-bat-dong-san-khac",  "http://batdongsan.com.vn/cho-thue-loai-bat-dong-san-khac/p%s/",    2, 2,       1));
-//
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-can-ho-chung-cu",         "http://batdongsan.com.vn/can-thue-can-ho-chung-cu/p%s/",           2, 3,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-nha-rieng",               "http://batdongsan.com.vn/can-thue-nha-rieng/p%s/",                 2, 6,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-nha-mat-pho",             "http://batdongsan.com.vn/can-thue-nha-mat-pho/p%s/",               2, 8,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-nha-tro-phong-tro",       "http://batdongsan.com.vn/can-thue-nha-tro-phong-tro/p%s/",         2, 2,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-van-phong",               "http://batdongsan.com.vn/can-thue-van-phong/p%s/",                 2, 2,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-cua-hang-ki-ot",          "http://batdongsan.com.vn/can-thue-cua-hang-ki-ot/p%s/",            2, 9,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-kho-nha-xuong-dat",       "http://batdongsan.com.vn/can-thue-kho-nha-xuong-dat/p%s/",         2, 3,       1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/can-thue-loai-bat-dong-san-khac",  "http://batdongsan.com.vn/can-thue-loai-bat-dong-san-khac/p%s/",    2, 76,      1));
-
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-ban",  "http://batdongsan.com.vn/nha-dat-ban/p%s/",            2, 5209,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-mua",  "http://batdongsan.com.vn/nha-dat-can-mua/p%s/",    2, 46,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-cho-thue", "http://batdongsan.com.vn/nha-dat-cho-thue/p%s/",   2, 1201,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-thue", "http://batdongsan.com.vn/nha-dat-can-thue/p%s/",   2, 30,      1));
-
-        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-ban",  "http://batdongsan.com.vn/nha-dat-ban/p%s/",            2, 20,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-mua",  "http://batdongsan.com.vn/nha-dat-can-mua/p%s/",    2, 46,      1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-cho-thue", "http://batdongsan.com.vn/nha-dat-cho-thue/p%s/",   2, 1201,    1));
-//        groups.add(new DNAGroupCrawler("http://batdongsan.com.vn/nha-dat-can-thue", "http://batdongsan.com.vn/nha-dat-can-thue/p%s/",   2, 30,      1));
+    private void fetchGroups() {
+        try {
+            String home = "http://batdongsan.com.vn";
+            Document document = DNADocumentCrawler.getDocumentFromUrl(home);
+            Element bodyElement = document.body();
+            Elements categoryElements = bodyElement.select("li.lv0");
+            if (categoryElements != null) {
+                for (int i = 0; i < 3; i++) {
+                    Element element = categoryElements.get(i);
+                    String link = home + element.select("a").attr("href");
+                    Document document1 = DNADocumentCrawler.getDocumentFromUrl(link);
+                    Element bodyElement1 = document1.body();
+                    Elements elements = bodyElement1.select("div.background-pager-right-controls");
+                    if (elements != null) {
+                        String text = elements.select("a").last().attr("href").split("/")[2].replace("p", "");
+                        try {
+                            int number = Integer.parseInt(text);
+                            DNADebug.prln(link + " has " + number + " news");
+                            groups.add(new DNAGroupCrawler(link, link + "/p%s/", 2, number, 1));
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -110,6 +93,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
     public DNADocumentCrawler getDocFromUrl(String url) {
         DNADocumentCrawler documentCrawler = new DNADocumentCrawler(url);
         String title = "";
+        String id = "";
         String street = "";
         String ward = "";
         String district = "";
@@ -128,12 +112,18 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
         String validate = "";
         String invalidate = "";
         String image = "";
+        String description = "";
         Elements elements = null;
         Element element = null;
         try {
             Document document = DNADocumentCrawler.getDocumentFromUrl(url);
             Element bodyElement = document.body();
+            id = url.substring(url.length() - 8, url.length() - 1);
             //--------------------------------------------------------------------------------------------------------//
+            Elements elements0 = bodyElement.select("div.pm-content");
+            if (elements0 != null) {
+                description = elements0.text().trim();
+            }
             elements = bodyElement.select("div.kqchitiet");
             if (elements != null) {
                 //----------------------------------------------------------------------------------------------------//
@@ -329,6 +319,7 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
+            documentCrawler.put(DNADocumentCrawler.ID, id);
             documentCrawler.put(DNADocumentCrawler.TITLE, title);
             documentCrawler.put(DNADocumentCrawler.STREET, street);
             documentCrawler.put(DNADocumentCrawler.WARD, ward);
@@ -347,11 +338,13 @@ public class DNABatDongSanGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.EMAIL, email);
             documentCrawler.put(DNADocumentCrawler.VALIDATE, validate);
             documentCrawler.put(DNADocumentCrawler.INAVLIDATE, invalidate);
+            documentCrawler.put(DNADocumentCrawler.DESCRIPTION, description);
             documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
+            documentCrawler.writeDocument(root);
             if (price != "0" && area != "0") {
-                documentCrawler.insertDocument(dnaMongo.mongoCollection);
+//                documentCrawler.insertDocument(dnaMongo.mongoCollection);
 //                documentCrawler.printDocument();
-//                documentCrawler.writeDocument();
+//                documentCrawler.writeDocument(root);
             }
         } catch (IOException e) {
             e.printStackTrace();
