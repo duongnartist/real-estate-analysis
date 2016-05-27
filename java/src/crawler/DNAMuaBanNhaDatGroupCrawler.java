@@ -6,6 +6,7 @@ import core.DNAGroupCrawler;
 import org.bson.BSON;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.DocumentType;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import utils.DNADebug;
@@ -22,19 +23,52 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
 
     public DNAMuaBanNhaDatGroupCrawler(long sleepTime) {
         super(sleepTime, "mua_ban_nha_dat");
+        fetchGroups();
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-ban-3513?p=0", "http://www.muabannhadat.vn/nha-ban-3513?p=%s", 1, 4307, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-ban-3514?p=0", "http://www.muabannhadat.vn/can-ho-ban-3514?p=%s", 1, 1595, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-ban-3515?p=0", "http://www.muabannhadat.vn/dat-ban-3515?p=%s", 1, 2076, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-ban-3516?p=0", "http://www.muabannhadat.vn/mat-bang-ban-3516?p=%s", 1, 11, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-ban-3513?p=0", "http://www.muabannhadat.vn/nha-ban-3513?p=%s", 1, 4307, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-ban-3514?p=0", "http://www.muabannhadat.vn/can-ho-ban-3514?p=%s", 1, 1595, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-ban-3515?p=0", "http://www.muabannhadat.vn/dat-ban-3515?p=%s", 1, 2076, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-ban-3516?p=0", "http://www.muabannhadat.vn/mat-bang-ban-3516?p=%s", 1, 11, 1));
+//
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-ban-3517?p=0", "http://www.muabannhadat.vn/kho-xuong-ban-3517?p=%s", 1, 13, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-cho-thue-3518?p=0", "http://www.muabannhadat.vn/nha-cho-thue-3518?p=%s", 1, 328, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=0", "http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=%s", 1, 263, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-cho-thue-3520?p=0", "http://www.muabannhadat.vn/dat-cho-thue-3520?p=%s", 1, 4, 1));
+//
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=0", "http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=%s", 1, 74, 1));
+//        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=0", "http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=%s", 1, 95, 1));
+    }
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-ban-3517?p=0", "http://www.muabannhadat.vn/kho-xuong-ban-3517?p=%s", 1, 13, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/nha-cho-thue-3518?p=0", "http://www.muabannhadat.vn/nha-cho-thue-3518?p=%s", 1, 328, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=0", "http://www.muabannhadat.vn/can-ho-cho-thue-3519?p=%s", 1, 263, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/dat-cho-thue-3520?p=0", "http://www.muabannhadat.vn/dat-cho-thue-3520?p=%s", 1, 4, 1));
+    private void fetchGroups() {
+        try {
+            Document document = DNADocumentCrawler.getDocumentFromUrl("http://www.muabannhadat.vn/nha-dat-3490");
+            Element bodyElement = document.body();
+            Elements listGroupElements = bodyElement.select("div.list-group");
+            if (listGroupElements != null) {
+                Elements badgeCusspElements = listGroupElements.select("p.badge");
+                Elements aElements = badgeCusspElements.select("a");
+                if (aElements != null) {
+                    for (int i = 0; i < 10; i++) {
+                        Element element = aElements.get(i);
+                        String root = "http://www.muabannhadat.vn/" + element.attr("href");
+                        String numberString = element.text().replace(".", "").trim();
+                        try {
+                            int number = Integer.parseInt(numberString);
+                            int page = Math.round((float) number / 10);
 
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=0", "http://www.muabannhadat.vn/mat-bang-cho-thue-3521?p=%s", 1, 74, 1));
-        groups.add(new DNAGroupCrawler("http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=0", "http://www.muabannhadat.vn/kho-xuong-cho-thue-3522?p=%s", 1, 95, 1));
+
+                            String homePage = root + "?p=0";
+                            String formatPage = root + "?p=%s";
+                            groups.add(new DNAGroupCrawler(homePage, formatPage, 1, page, 1));
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -93,7 +127,10 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
         String invalidate = "";
         String dateCreated = "";
         String dateUpdated = "";
-        String image = "";
+        String id = "";
+        String longitude = "";
+        String latitude = "";
+        String description = "";
         Elements elements = null;
         Element element = null;
         try {
@@ -103,6 +140,28 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             elements = bodyElement.select("h1.navi-title");
             if (elements != null) {
                 title = elements.text().trim();
+            }
+            elements = bodyElement.select("div.box-description");
+            if (elements != null) {
+                description = elements.text().trim();
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("span#MainContent_ctlDetailBox_lblId");
+            if (elements != null) {
+                id = elements.text().trim();
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("span#MainContent_ctlDetailBox_lblMapLink");
+            if (elements != null) {
+                elements = elements.select("a");
+                if (elements != null) {
+                    String link = elements.attr("href");
+                    if (link.length() > 0) {
+                        String[] location = link.split(":")[2].split(",");
+                        latitude = location[0];
+                        longitude = location[1];
+                    }
+                }
             }
             //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("span#MainContent_ctlDetailBox_lblPrice");
@@ -236,19 +295,21 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             org.bson.Document imageDocument = new org.bson.Document();
             elements = bodyElement.select("a");
             if (elements != null) {
-                System.out.println(elements.text());
                 int count = 0;
                 for (int i = 0; i < elements.size(); i++) {
                     element = elements.get(i);
                     String imageUrl = element.attr("href");
                     if (imageUrl.contains("http://www.muabannhadat.vn/uploads/images/")) {
-                        System.out.println(imageUrl);
                         imageDocument.put(DNADocumentCrawler.IMAGE + "_" + count++, imageUrl);
                     }
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
+            documentCrawler.put(DNADocumentCrawler.ID, id);
             documentCrawler.put(DNADocumentCrawler.TITLE, title);
+            documentCrawler.put(DNADocumentCrawler.DESCRIPTION, description);
+            documentCrawler.put(DNADocumentCrawler.LATITUDE, latitude);
+            documentCrawler.put(DNADocumentCrawler.LONGITUDE, longitude);
             documentCrawler.put(DNADocumentCrawler.STREET, street);
             documentCrawler.put(DNADocumentCrawler.WARD, ward);
             documentCrawler.put(DNADocumentCrawler.DISTRICT, district);
@@ -276,7 +337,7 @@ public class DNAMuaBanNhaDatGroupCrawler extends DNABaseCrawler {
             documentCrawler.put(DNADocumentCrawler.DATE_UPDATED, dateUpdated);
             documentCrawler.put(DNADocumentCrawler.IMAGE, imageDocument);
             documentCrawler.printDocument();
-            documentCrawler.writeDocument();
+            documentCrawler.writeDocument(root);
 //            documentCrawler.insertDocument(dnaMongo.mongoCollection);
             if (price != "0" && area != "0") {
 //                documentCrawler.insertDocument(dnaMongo.mongoCollection);

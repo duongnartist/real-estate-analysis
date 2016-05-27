@@ -23,6 +23,19 @@ public class DNAFile {
         }
     }
 
+    public static String createCollectionFolder(String root, String collection) {
+        String path = root + File.separator + collection;
+        File file = new File(path);
+        if (file != null && file.exists() == false) {
+            if (file.mkdir() == true) {
+                DNADebug.prln("Created folder " + path);
+            } else {
+                DNADebug.prln("Can't created folder " + path);
+            }
+        }
+        return path;
+    }
+
     public static void writeStringsToFile(ArrayList<String> strings, String file) {
         try {
             FileWriter writer = new FileWriter(file, true);

@@ -12,7 +12,14 @@ public class DNADebug {
         for (int i = 0; i < tab; i++) {
             tabString += "\t";
         }
-        System.out.println(String.format(tabString + "%" + PADDING_LEFT + "s: %s", tag, msg));
+        prln(String.format(tabString + "%" + PADDING_LEFT + "s: %s", tag, msg));
     }
 
+    public static void prln(String log) {
+        System.out.println(log);
+    }
+
+    public static void pr(String log) {
+        System.out.print(log);
+    }
 }

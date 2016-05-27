@@ -21,7 +21,7 @@ import java.util.Collections;
  */
 public class DNADocumentCrawler {
 
-    public static final String ID = "_id";
+    public static final String _ID = "_id";
     public static final String URL = "url";
     public static final String TITLE = "title";
     public static final String STREET = "street";
@@ -50,6 +50,10 @@ public class DNADocumentCrawler {
     public static final String PHONE = "phone";
     public static final String EMAIL = "email";
     public static final String IMAGE = "image";
+    public static final String LONGITUDE = "longitude";
+    public static final String LATITUDE = "latitude";
+    public static final String ID = "id";
+    public static final String DESCRIPTION = "description";
 
     private DNADelegateCrawler callback;
     private org.bson.Document document;
@@ -71,10 +75,9 @@ public class DNADocumentCrawler {
                 .get();
     }
 
-    public void writeDocument() {
-//        String name = document.getObjectId(ID).toString();
-        String name = url.substring(url.length() - 7, url.length());
-        String file = DNAFile.storage + File.separator + name + ".json";
+    public void writeDocument(String root) {
+        String file = root + File.separator + document.getString(ID) + ".json";
+        DNADebug.prln(file);
         File docFile = new File(file);
         if (docFile.exists() == true) {
             docFile.delete();
@@ -109,13 +112,16 @@ public class DNADocumentCrawler {
     }
 
     public void printDocument() {
-//        DNADebug.log(0, ID, document.getObjectId(ID).toString());
+        DNADebug.log(1, ID, document.getString(ID));
+        DNADebug.log(1, TITLE, document.getString(TITLE));
+        DNADebug.log(1, LATITUDE, document.getString(LATITUDE));
+        DNADebug.log(1, LONGITUDE, document.getString(LONGITUDE));
+        DNADebug.log(1, DESCRIPTION, document.getString(DESCRIPTION));
         DNADebug.log(1, URL, document.getString(URL));
         DNADebug.log(1, VALIDATE, document.getString(VALIDATE));
         DNADebug.log(1, INAVLIDATE, document.getString(INAVLIDATE));
         DNADebug.log(1, DATE_CREATED, document.getString(DATE_CREATED));
         DNADebug.log(1, DATE_UPDATED, document.getString(DATE_UPDATED));
-        DNADebug.log(1, TITLE, document.getString(TITLE));
         DNADebug.log(1, STREET, document.getString(STREET));
         DNADebug.log(1, WARD, document.getString(WARD));
         DNADebug.log(1, DISTRICT, document.getString(DISTRICT));

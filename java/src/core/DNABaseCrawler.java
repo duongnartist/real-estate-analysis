@@ -1,9 +1,11 @@
 package core;
 
 import utils.DNADebug;
+import utils.DNAFile;
 import utils.DNAMongo;
 import utils.DNATime;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -18,8 +20,10 @@ public abstract class DNABaseCrawler implements Runnable, DNADelegateCrawler {
     protected long sleepTime;
     protected boolean running;
     protected DNAMongo dnaMongo;
+    protected String root;
 
     public DNABaseCrawler(long sleepTime, String collection) {
+        root = DNAFile.createCollectionFolder(DNAFile.storage, collection);
 //        dnaMongo = new DNAMongo(DNAMongo.URI);
 //        dnaMongo.openCollection(collection);
 //        try {
