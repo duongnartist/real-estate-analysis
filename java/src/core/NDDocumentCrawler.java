@@ -40,6 +40,7 @@ public class NDDocumentCrawler {
     public static final String DATE_UPDATED = "date_updated";
     public static final String DATE_CREATED = "date_created";
     public static final String NAME = "name";
+    public static final String ADDRESS = "address";
     public static final String MOBILE = "mobile";
     public static final String PHONE = "phone";
     public static final String EMAIL = "email";
@@ -48,6 +49,8 @@ public class NDDocumentCrawler {
     public static final String LATITUDE = "latitude";
     public static final String ID = "id";
     public static final String DESCRIPTION = "description";
+    public static final String LEGAL = "legal";
+    public static final String FRONT = "front";
 
     private NDDelegateCrawler callback;
     private org.bson.Document document;
@@ -134,9 +137,12 @@ public class NDDocumentCrawler {
         NDDebug.log(1, UTILITY, document.get(UTILITY).toString());
         NDDebug.log(1, FLOOR, document.getString(FLOOR));
         NDDebug.log(1, NAME, document.getString(NAME));
+        NDDebug.log(1, ADDRESS, document.getString(ADDRESS));
         NDDebug.log(1, MOBILE, document.getString(MOBILE));
         NDDebug.log(1, PHONE, document.getString(PHONE));
         NDDebug.log(1, EMAIL, document.getString(EMAIL));
+        NDDebug.log(1, LEGAL, document.getString(LEGAL));
+        NDDebug.log(1, FRONT, document.getString(FRONT));
         NDDebug.log(1, IMAGE, document.get(IMAGE).toString());
     }
 

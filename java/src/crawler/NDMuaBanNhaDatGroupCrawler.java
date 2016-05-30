@@ -102,6 +102,7 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
         String utility = "";
         String floor = "";
         String name = "";
+        String address = "";
         String mobile = "";
         String phone = "";
         String email = "";
@@ -113,6 +114,8 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
         String longitude = "";
         String latitude = "";
         String description = "";
+        String legal = "";
+        String front = "";
         Elements elements = null;
         Element element = null;
         try {
@@ -123,7 +126,7 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
             if (elements != null) {
                 title = elements.text().trim();
             }
-            elements = bodyElement.select("div.box-description");
+            elements = bodyElement.select("div#Description");
             if (elements != null) {
                 description = elements.text().trim();
             }
@@ -254,23 +257,35 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
                 project = elements.text().trim();
             }
             //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("span#MainContent_ctlDetailBox_lblLegalStatus");
+            if (elements != null) {
+                legal = elements.text().trim();
+            }
+            //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("span#MainContent_ctlDetailBox_lblFrontRoadWidth");
+            if (elements != null) {
+                front = elements.text().trim();
+            }
+            //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("span#MainContent_ctlDetailBox_lblContactName");
             if (elements != null) {
                 name = elements.text().trim();
             }
             //--------------------------------------------------------------------------------------------------------//
+            elements = bodyElement.select("span#MainContent_ctlDetailBox_lblAddressContact");
+            if (elements != null) {
+                address = elements.text().trim();
+            }
+            //--------------------------------------------------------------------------------------------------------//
             elements = bodyElement.select("span#MainContent_ctlDetailBox_lblContactPhone");
             if (elements != null) {
                 phone = elements.text().replace("xxx", "").replace("(click để xem)", "").trim();
-                elements = bodyElement.select("div#Description");
-                if (elements != null) {
-                    String text = elements.text().replace(".", "").replace(" ", "").replace("-", "");
-                    int index = text.indexOf(phone);
-                    if (index >= 0 && text.length() >= index + phone.length() + 3) {
-                        phone = text.substring(index, index + phone.length() + 3);
-                    } else {
-                        phone += "xxx";
-                    }
+                String text = description.replace(".", "").replace(" ", "").replace("-", "");
+                int index = text.indexOf(phone);
+                if (index >= 0 && text.length() >= index + phone.length() + 3) {
+                    phone = text.substring(index, index + phone.length() + 3);
+                } else {
+                    phone += "xxx";
                 }
             }
             //--------------------------------------------------------------------------------------------------------//
@@ -310,6 +325,7 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
             documentCrawler.put(NDDocumentCrawler.ENVIRONMENT, environmentDocument);
             documentCrawler.put(NDDocumentCrawler.UTILITY, utilityDocument);
             documentCrawler.put(NDDocumentCrawler.NAME, name);
+            documentCrawler.put(NDDocumentCrawler.ADDRESS, address);
             documentCrawler.put(NDDocumentCrawler.MOBILE, mobile);
             documentCrawler.put(NDDocumentCrawler.PHONE, phone);
             documentCrawler.put(NDDocumentCrawler.EMAIL, email);
@@ -317,10 +333,12 @@ public class NDMuaBanNhaDatGroupCrawler extends NDBaseCrawler {
             documentCrawler.put(NDDocumentCrawler.INAVLIDATE, invalidate);
             documentCrawler.put(NDDocumentCrawler.DATE_CREATED, dateCreated);
             documentCrawler.put(NDDocumentCrawler.DATE_UPDATED, dateUpdated);
+            documentCrawler.put(NDDocumentCrawler.FRONT, front);
+            documentCrawler.put(NDDocumentCrawler.LEGAL, legal);
             documentCrawler.put(NDDocumentCrawler.IMAGE, imageDocument);
-            documentCrawler.writeDocument(root);
-//            documentCrawler.printDocument();
-//            documentCrawler.insertDocument(NDMongo.mongoCollection);
+//            documentCrawler.writeDocument(root);
+            documentCrawler.printDocument();
+            documentCrawler.insertDocument(NDMongo.mongoCollection);
             if (price != "0" && area != "0") {
 //                documentCrawler.insertDocument(NDMongo.mongoCollection);
 //                documentCrawler.printDocument();
