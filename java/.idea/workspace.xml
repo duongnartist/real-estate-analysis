@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf50bd82-4986-44b6-b4b1-8d074b93411b" name="Default" comment="update mua ban nha dat properties">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/data.tmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NDTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/java.iml" afterPath="$PROJECT_DIR$/real-estate-analysis.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
@@ -552,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464632077624</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update mua ban nha dat properties">
+      <created>1464956551977</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1464956551977</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
