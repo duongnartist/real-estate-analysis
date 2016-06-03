@@ -1,0 +1,12 @@
+<select name="ctl00$ctl00$BodyContent$MainContent$ctlAccounttypeAddress$GeoDropdown$ddlGeoDistrict" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ctl00$BodyContent$MainContent$ctlAccounttypeAddress$GeoDropdown$ddlGeoDistrict\',\'\')', 0)" id="BodyContent_MainContent_ctlAccounttypeAddress_GeoDropdown_ddlGeoDistrict" class="form-control form-control-thh dropdown cusdistrict valid">
+	<option selected="selected" value="-1">Chọn Quận</option>
+	<option value="69">Huyện Bến Cát</option>
+	<option value="70">Huyện Dầu Tiếng</option>
+	<option value="72">Huyện Phú Giáo</option>
+	<option value="71">Huyện Tân Uyên</option>
+	<option value="73">Huyện Thuận An</option>
+	<option value="676">Thị xã An Bình</option>
+	<option value="74">Thị Xã Dĩ An</option>
+	<option value="68">Thị xã Thủ Dầu Một</option>
+
+</select>
