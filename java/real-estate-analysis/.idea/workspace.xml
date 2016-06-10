@@ -2,84 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf50bd82-4986-44b6-b4b1-8d074b93411b" name="Default" comment="add test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/bson-3.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/jsoup-1.8.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mongodb-driver-3.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/mongodb-driver-core-3.0.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/java.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/real-estate-analysis.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/data.tmp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NDMain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NDTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/NDBaseCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/NDDelegateCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/NDDocumentCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/NDGroupCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/NDWebCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/crawler/NDBatDongSanGroupCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/crawler/NDMuaBanNhaDatGroupCrawler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDDate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDDebug.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDFile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDMongo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDString.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/NDTime.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/java.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/lib.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lib/bson-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lib/jsoup-1.8.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lib/mongodb-driver-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../lib/mongodb-driver-core-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/DNAMain.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/bson-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/core/DNABaseCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/core/DNADelegateCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/core/DNADocumentCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/core/DNAGroupCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/core/DNAWebCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/crawler/DNABatDongSanGroupCrawler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/jsoup-1.8.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/mongodb-driver-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/mongodb-driver-core-3.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNADate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNADebug.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNAFile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNAMongo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNAString.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/production/java/utils/DNATime.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../real-estate-analysis.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../res/data.tmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/NDMain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/NDTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/core/NDBaseCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/core/NDDelegateCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/core/NDDocumentCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/core/NDGroupCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/core/NDWebCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/crawler/NDBatDongSanGroupCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/crawler/NDMuaBanNhaDatGroupCrawler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDDate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDDebug.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDFile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDMongo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDString.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/utils/NDTime.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,8 +49,8 @@
       <file leaf-file-name="NDMuaBanNhaDatGroupCrawler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/crawler/NDMuaBanNhaDatGroupCrawler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1268">
-              <caret line="153" column="47" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+            <state relative-caret-position="-1105">
+              <caret line="112" column="23" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -711,7 +634,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5559247" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5559247" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1224,18 +1147,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real-estate-analysis.iml">
+    <entry file="file://$PROJECT_DIR$/src/crawler/NDMuaBanNhaDatGroupCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="-1105">
+          <caret line="112" column="23" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/crawler/NDMuaBanNhaDatGroupCrawler.java">
+    <entry file="file://$PROJECT_DIR$/real-estate-analysis.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="153" column="47" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding />
         </state>
       </provider>
