@@ -11,7 +11,7 @@ $arg = array(
     'ward'=>'Phường',
     'street'=>''
 );
-HttpHelper('GET',$arg,$uri,HTTP_USER,HTTP_PWD); die();
+//HttpHelper('GET',$arg,$uri,HTTP_USER,HTTP_PWD); die();
 
 
 $uri = '/rest/v1/city/searchByKey';
@@ -25,7 +25,19 @@ $arg = array(
     'name'=>'tran dinh danh',
     'phone'=>'0978505xxx',
 );
+//HttpHelper('GET',$arg,$uri,HTTP_USER,HTTP_PWD); die();
+$uri = '/rest/v1/enterprise/searchByKey';
+$arg = array(
+    'key'=>'a'
+);
+//HttpHelper('GET',$arg,$uri,HTTP_USER,HTTP_PWD); die();
+
+$uri = '/rest/v1/news/searchByCategory';
+$arg = array(
+    'category'=>'nhà đất'
+);
 HttpHelper('GET',$arg,$uri,HTTP_USER,HTTP_PWD); die();
+
 function makeSignature($method, $url, $Args = array())
 {
     ksort($Args);

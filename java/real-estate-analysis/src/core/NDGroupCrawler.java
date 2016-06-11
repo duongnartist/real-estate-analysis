@@ -14,6 +14,7 @@ public class NDGroupCrawler {
     private int start;
     private int end;
     private int step;
+    private String name;
 
     public NDGroupCrawler() {
 
@@ -78,5 +79,13 @@ public class NDGroupCrawler {
 
     public void setStep(int step) {
         this.step = step;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

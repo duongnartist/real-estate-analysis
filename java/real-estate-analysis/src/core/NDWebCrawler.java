@@ -1,5 +1,6 @@
 package core;
 
+import crawler.NDEnterpriseDictionariesCrawler;
 import crawler.NDMuaBanNhaDatGroupCrawler;
 import utils.NDTime;
 
@@ -15,7 +16,8 @@ public class NDWebCrawler implements NDDelegateCrawler {
     public NDWebCrawler() {
         crawlers = new ArrayList<NDBaseCrawler>();
 //        crawlers.add(new NDBatDongSanGroupCrawler(NDTime.millisecondsInHours(24)));
-        crawlers.add(new NDMuaBanNhaDatGroupCrawler(NDTime.millisecondsInHours(24)));
+//        crawlers.add(new NDMuaBanNhaDatGroupCrawler(NDTime.millisecondsInHours(24)));
+        crawlers.add(new NDEnterpriseDictionariesCrawler(NDTime.millisecondsInHours(24)));
     }
 
     @Override
