@@ -13,7 +13,6 @@ import utils.NDTime;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by duong on 6/12/16.
@@ -162,7 +161,7 @@ class NDGroup {
         for (int i = start; i <= end; i += step) {
             urls.add(String.format(format, i));
         }
-        Collections.reverse(urls);
+//        Collections.reverse(urls);
     }
 }
 
@@ -260,8 +259,12 @@ class NDNews {
                 String link = elements.attr("href");
                 if (link.length() > 0) {
                     String[] location = link.split(":")[2].split(",");
-                    latitude = Double.parseDouble(location[0]);
-                    longitude = Double.parseDouble(location[1]);
+                    try {
+                        latitude = Double.parseDouble(location[0]);
+                        longitude = Double.parseDouble(location[1]);
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
@@ -276,13 +279,17 @@ class NDNews {
             if (index >= 0) {
                 String priceUnit = priceString.substring(index, priceString.length()).trim();
                 priceString = priceString.substring(0, index).trim();
-                price = Double.parseDouble(priceString);
-                if (priceUnit.equalsIgnoreCase("Tỷ VNĐ")) {
+                try {
+                    price = Double.parseDouble(priceString);
+                    if (priceUnit.equalsIgnoreCase("Tỷ VNĐ")) {
+                        price *= 1000;
+                    }
                     price *= 1000;
+                    price = Math.round(price);
+                    price /= 1000;
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
                 }
-                price *= 1000;
-                price = Math.round(price);
-                price /= 1000;
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -293,10 +300,14 @@ class NDNews {
             if (index >= 0) {
                 String surfaceUnit = surfaceString.substring(index, surfaceString.length()).trim();
                 surfaceString = surfaceString.substring(0, index).trim();
-                surface = Double.parseDouble(surfaceString);
-                surface *= 1000;
-                surface = Math.round(surface);
-                surface /= 1000;
+                try {
+                    surface = Double.parseDouble(surfaceString);
+                    surface *= 1000;
+                    surface = Math.round(surface);
+                    surface /= 1000;
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -309,7 +320,11 @@ class NDNews {
         if (elements != null) {
             String bedroomString = elements.text().trim();
             if (bedroomString.length() > 0) {
-                bedroom = Integer.parseInt(bedroomString);
+                try {
+                    bedroom = Integer.parseInt(bedroomString);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -317,7 +332,11 @@ class NDNews {
         if (elements != null) {
             String bathroomString = elements.text().trim();
             if (bathroomString.length() > 0) {
-                bathroom = Integer.parseInt(bathroomString);
+                try {
+                    bathroom = Integer.parseInt(bathroomString);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -325,7 +344,11 @@ class NDNews {
         if (elements != null) {
             String floorString = elements.text().trim();
             if (floorString.length() > 0) {
-                floor = Integer.parseInt(floorString);
+                try {
+                    floor = Integer.parseInt(floorString);
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -391,10 +414,14 @@ class NDNews {
         if (elements != null) {
             String frontString = elements.text().trim().replace(",", ".").replace(" m", "");
             if (frontString.length() > 0) {
-                front = Double.parseDouble(frontString);
-                front *= 1000;
-                front = Math.round(front);
-                front /= 1000;
+                try {
+                    front = Double.parseDouble(frontString);
+                    front *= 1000;
+                    front = Math.round(front);
+                    front /= 1000;
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //--------------------------------------------------------------------------------------------------------//
@@ -436,7 +463,7 @@ class NDNews {
             }
         }
         put();
-        log();
+//        log();
         if (document.size() > 0) {
             insert(NDMuaBanNhaDatCrawler.mongo.mongoCollection);
         }
